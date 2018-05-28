@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+#responsivelightbox {
+	text-align: center;
+}
+
+#responsivelightbox ul {
+	margin: 0;
+	padding: 0;
+}
+
+#responsivelightbox li {
+	margin: 7px 14px;
+	display: inline-block;
+	background: none;
+	padding: 0;
+}
+
+#responsivelightbox img {
+	width: 60px;
+	height: 60px;
+	border: 1px solid #666666;
+	padding: 0px;
+	background: #eee;
+	-webkit-box-shadow: 0 0 0.313em rgba(0, 0, 0, .05);
+	box-shadow: 0 0 0.313em rgba(0, 0, 0, .05);
+	-webkit-transition: -webkit-box-shadow .3s ease, border-color .3s ease;
+	transition: box-shadow .3s ease, border-color .3s ease;
+}
+
+#responsivelightbox img:hover, #responsivelightbox img:focus {
+	border: 1px solid #ffffff;
+	background: #fff;
+	-webkit-box-shadow: 0 0 0.938em rgba(0, 0, 0, .25);
+	box-shadow: 0 0 0.938em rgba(0, 0, 0, .25);
+}
+
+#imagelightbox-overlay {
+	background-color: rgba(255, 255, 255, .9);
+}
+
+@media only screen and (max-width: 41.250em) {
+	#responsivelightbox {
+		width: 100%;
+	}
+}
+
+.hero-carousel-nav {
+	display: block !important;
+}
+
+.hero-carousel article {
+	height: 650px;
+}
+
+.hero-carousel article .contents {
+	top: 370px;
+	left: 18%;
+	width: 30%;
+	color: #FFFFFF;
+	padding: 0%;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background: rgba(0, 0, 0, 0);
+	-pie-background: rgba(0, 0, 0, 0);
+	font-size: 24px;
+	behavior: url(../modules/mod_hot_full_carousel/tmpl/PIE.html);
+}
+
+.hero-carousel article .contents h2 {
+	font-size: 48px;
+}
+
+article.bgimage-1 {
+	background-image: url(../images/carousel/theatre_slide1.jpg);
+}
+
+article.bgimage-2 {
+	background-image: url(../images/carousel/theatre_slide2.jpg);
+}
+
+article.bgimage-3 {
+	background-image: url(../images/carousel/theatre_slide3.jpg);
+}
+
+@media ( max-width : 850px) {
+	article.bgimage-1 {
+		background-image: url(../images/carousel/small_theatre_slide1.jpg);
+	}
+	article.bgimage-2 {
+		background-image: url(../images/carousel/small_theatre_slide2.jpg);
+	}
+	article.bgimage-3 {
+		background-image: url(../images/carousel/small_theatre_slide3.jpg);
+	}
+}
+
+.hero-carousel article .contents {
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hero-carousel-nav {
+	bottom: 87px;
+}
+
+.hero-carousel-nav li {
+	right: 0px;
+	width: 90px;
+	height: 75px;
+}
+
+.hero-carousel-nav li.prev {
+	left: 0px;
+}
+
+.hero-carousel-nav li.next {
+	right: 0;
+}
+
+.hero-carousel-nav li a {
+	background: rgba(22, 189, 251, 0);
+	color: #FFFFFF;
+	width: 90px;
+	height: 75px;
+	line-height: 75px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	font-size: 24px;
+}
+
+.hero-carousel-nav li a:hover {
+	background: #FFCC33;
+}

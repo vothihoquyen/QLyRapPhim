@@ -1,0 +1,89 @@
+/*------------------------------------------------------------------------
+# "Sparky Framework" - Joomla Template Framework
+# Copyright (C) 2015 HotThemes. All Rights Reserved.
+# License: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+# Author: HotThemes
+# Website: http://www.hotjoomlatemplates.com
+-------------------------------------------------------------------------*/
+
+/* This is a variant of default template style */
+
+.hero-carousel-nav li.prev {
+	background: url(../images/custom/carousel_arrow_blue.png) repeat-y right;
+}
+
+.hero-carousel-nav li.prev a:hover {
+	background: url(../images/custom/carousel_arrow_light_blue.png) repeat-y right;
+}
+
+.hero-carousel-nav li.next {
+	background: url(../images/custom/carousel_arrow_blue.png) repeat-y left;
+}
+
+.hero-carousel-nav li.next a:hover {
+	background: url(../images/custom/carousel_arrow_light_blue.png) repeat-y left;
+}
+
+.hero-carousel article .contents {
+	background: url(../images/custom/carousel_bg_blue.png) repeat-y;
+}
+
+a:hover,
+.sparky_logo, .sparky_logo a,
+.mnu_topmenu > li > a:hover, .mnu_topmenu > li:hover > a, .mnu_topmenu > li > a:hover, .mnu_topmenu > li:hover > span,
+.mnu_sidemenu > li > a,
+.mp_top1 a:hover {
+	color: #1B325F;
+}
+
+.mnu_topmenu > li.active > a, .mnu_topmenu > li.active > span {
+	color: #1B325F !important;
+}
+
+a, .mnu_topmenu > li > a, .mnu_topmenu > li > span, .mp_top1 a, .mp_bottom1 a {
+	color: #9CC4E4;
+}
+
+.tagspopular li a:hover, .tags li a.label:hover, .button:hover, .btn:hover, .mnu_topmenu ul {
+	background: #1B325F;
+}
+
+.mnu_topmenu li ul li:hover {
+	background: #3A89C9;
+}
+
+p.readmore a {
+	background: #9CC4E4 url(../images/custom/readmore_bg.png) right no-repeat;
+}
+
+p.readmore a:hover, p.readmore a:focus {
+	background: #1B325F url(../images/custom/readmore_bg.png) right no-repeat;
+}
+
+.button, .btn, .mp_header2 h3:before, .tagspopular li a, .tags li a.label {
+	background: #9CC4E4;
+}
+
+.mp_header3 h3:before {
+	background: #1B325F;
+}
+
+h1, h1 a, .mnu_sidemenu > li > a:hover {
+	color: #9CC4E4;
+}
+
+.mp_right h3, .mp_left h3, .sparky_home h2 {
+	color: #3e3432;
+}
+
+.mp_right .moduletable_featured, .mp_left .moduletable_featured {
+	background: #b5cddf url(../images/custom/module_bg.png) repeat-x;
+}
+
+.mp_right .moduletable, .mp_left .moduletable {
+	background: #ddeaf5 url(../images/custom/module_bg.png) repeat-x;
+}
+
+body {
+	background: #6e7377 url(../images/custom/background_blue.jpg) top center repeat-x fixed;
+}
