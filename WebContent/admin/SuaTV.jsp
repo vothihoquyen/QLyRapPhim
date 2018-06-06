@@ -1,3 +1,5 @@
+<%@page import="model.ThanhVien"%>
+<%@page import="dao.ThanhVienDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,7 +38,7 @@
 	<script>
 		$(document).ready(function(){
 			// binds form submission and fields to the validation engine
-			$("#addcustomerID").validationEngine();
+			$("#addthanhvienID").validationEngine();
 		});
 		function checkHELLO(field, rules, i, options){
 			if (field.val() != "HELLO") {
@@ -70,7 +72,7 @@
   		        return false;
   		    }
   		}
-  		$('#addcustomerID').bind({
+  		$('#suathanhvienID').bind({
   			'submit':function(){
   				if($('#STT').val()==''){
 					$('#STT').css('box-shadow','0px 0px 2px 2px red');
@@ -194,6 +196,10 @@
 
 </head>
 <body>
+<%
+		String thanhvien_id = (String) session.getAttribute("thanhvien_id");
+		ThanhVien sp = ThanhVienDAO.getTV(thanhvien_id);
+		%>
 	<div class="container">
 		<div class="row">
 			<h2><strong>Thêm thành viên</strong>
@@ -204,187 +210,165 @@
 		<div class="">
 		</div>
 		  <div class="form-center">
-			<form class="form-horizontal"
-				action="<%=request.getContextPath()%>/addThanhVien"
-				name="addcustomer" method="post" id="addcustomerID">
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						STT:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="STT"
-									placeholder="Số thứ tự" id="STT">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-STT"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-STT"></p>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Mã Thành Viên:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="MaTV"
-									placeholder="Mã thành viên" id="idTV">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-id"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-id"></p>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Tên Thành Viên:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="tenTV"
-									placeholder="Tên thành viên" id="name">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-name"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-name"></p>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Giới Tính:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class=" form-control " value=""
-									name="gioiTinh" placeholder="Giới tính" id="gioiTinh">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-gioiTinh"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-gioiTinh"></p>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Tuổi:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="tuoi"
-									placeholder="Tuổi" id="tuoi">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-tuoi"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-tuoi"></p>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Ngày Sinh:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="date" class="form-control" name="date"
-									placeholder="Nhập ngày sinh" id="datepicker">
+		          <form class="form-horizontal" action="<%=request.getContextPath()%>/suaThanhVien" name="addcustomer" method="post" id="suathanhvienID">
+					    <div class="form-group">
+				              <label class="control-label col-sm-2" for=""><span class=""></span> STT:</label>
+					               <div class="col-sm-10">
+					               		<div class="row">
+					               			<div class="col-sm-8">
+						             			 <input type="text" class=" form-control "  value="" name="STT" placeholder="Số thứ tự" id="STT">
+					               			</div>
+					               			<div class="col-sm-2">
+												<p id="icon-STT"></p>
+					               			</div>
+										</div>
+										<div class="row">
+											<p style="color: red" id="error-STT"></p>	
+										</div>
+					           		</div>
+		          	  	</div>  
+					     <div class="form-group">
+				              <label class="control-label col-sm-2" for=""><span class=""></span> Mã Thành Viên:</label>
+					               <div class="col-sm-10">
+					               		<div class="row">
+					               			<div class="col-sm-8">
+						             			 <input type="text" class=" form-control "  value="" name="MaTV" placeholder="Mã thành viên" id="idTV">
+					               			</div>
+					               			<div class="col-sm-2">
+												<p id="icon-id"></p>
+					               			</div>
+										</div>
+										<div class="row">
+											<p style="color: red" id="error-id"></p>	
+										</div>
+					           		</div>
+		          	  	</div>  
+		          	  	 <div class="form-group">
+				              <label class="control-label col-sm-2" for=""><span class=""></span> Tên Thành Viên:</label>
+					               <div class="col-sm-10">
+					               		<div class="row">
+					               			<div class="col-sm-8">
+						             			 <input type="text" class=" form-control "  value="" name="tenTV" placeholder="Tên thành viên" id="name">
+					               			</div>
+					               			<div class="col-sm-2">
+												<p id="icon-name"></p>
+					               			</div>
+										</div>
+										<div class="row">
+											<p style="color: red" id="error-name"></p>	
+										</div>
+					           		</div>
+		          	  	</div>  
+		          	  	 <div class="form-group">
+				              <label class="control-label col-sm-2" for=""><span class=""></span> Giới Tính:</label>
+					               <div class="col-sm-10">
+					               		<div class="row">
+					               			<div class="col-sm-8">
+						             			 <input type="text" class=" form-control "  value="" name="gioiTinh" placeholder="Giới tính" id="gioiTinh">
+					               			</div>
+					               			<div class="col-sm-2">
+												<p id="icon-gioiTinh"></p>
+					               			</div>
+										</div>
+										<div class="row">
+											<p style="color: red" id="error-gioiTinh"></p>	
+										</div>
+					           		</div>
+		          	  	</div>  
+		          	  	<div class="form-group">
+				              <label class="control-label col-sm-2" for=""><span class=""></span> Tuổi:</label>
+					               <div class="col-sm-10">
+					               		<div class="row">
+					               			<div class="col-sm-8">
+						             			 <input type="text" class=" form-control "  value="" name="tuoi" placeholder="Tuổi" id="tuoi">
+					               			</div>
+					               			<div class="col-sm-2">
+												<p id="icon-tuoi"></p>
+					               			</div>
+										</div>
+										<div class="row">
+											<p style="color: red" id="error-tuoi"></p>	
+										</div>
+					           		</div>
+		          	  	</div>  
+		          	  	<div class="form-group">
+		              <label class="control-label col-sm-2" for=""><span class=""></span> Ngày Sinh:</label>
+		               <div class="col-sm-10">
+		               		<div class="row">
+		               			<div class="col-sm-8">
+		               				<input type="date" class="form-control" name="date" placeholder="Nhập ngày sinh" id="datepicker">
+		               				
+		               			</div>
+		               			<div class="col-sm-2">
+									<p id="icon-date"></p>
+		               			</div>
+		               		</div>
+		               		<div class="row">
+		            			<p style="color: red" id="error-date"></p>	
+		               		</div>
+		              
+		            	</div>
+		            </div> 
+		             <div class="form-group">
+		              <label class="control-label col-sm-2" for=""><span class=""></span> Loại:</label>
+		               <div class="col-sm-10">
+		               		<div class="row">
+		               			<div class="col-sm-8">
+		               				<input type="text" class="form-control "  value="" name="loai" placeholder="Loại Thành viên" id="loai">
+		               			</div>
+		               			<div class="col-sm-2">
+									<p id="icon-loai"></p>
+		               			</div>
+		               		</div>
+		               		<div class="row">
+		            			<p style="color: red" id="error-loai"></p>	
+		               		</div>
+		              
+		            	</div>
+		            </div> 
+		            <div class="form-group">
+		              <label class="control-label col-sm-2" for=""><span class=""></span> Tên Đăng nhập:</label>
+		               <div class="col-sm-10">
+		               		<div class="row">
+		               			<div class="col-sm-8">
+		               				<input type="text" class="form-control "  value="" name="tkkh" placeholder="Nhập tài khoản" id="account">
+		               			</div>
+		               			<div class="col-sm-2">
+									<p id="icon-account"></p>
+		               			</div>
+		               		</div>
+		               		<div class="row">
+		            			<p style="color: red" id="error-account"></p>	
+		               		</div>
+		              
+		            	</div>
+		            </div> 
+		            <div class="form-group">
+		              <label class="control-label col-sm-2" for=""><span class=""></span> Mật khẩu:</label>
+		                  <div class="col-sm-10">
+		                  	<div class="row">
+		               			<div class="col-sm-8">
+		               				  <input type="password" class="form-control "  value="" name="pass" placeholder="Nhập mật khẩu" id="pass">
+		               			</div>
+		               			<div class="col-sm-2">
+									<p id="icon-pass"></p>
+		               			</div>
+		               		</div>
+		               		<div class="row">
+		            			 <p style="color: red" id="error-pass"></p>	
+		               		</div>
+		           		 </div>
+		            </div>  
+		            
+					    <div class="form-group">        
+					      <div class="col-sm-offset-2 col-sm-10">
+					        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>  Thêm</button>
+					      </div>
 
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-date"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-date"></p>
-						</div>
-
+					    </div>
+					  </form>
+					   
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Loại:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class="form-control " value="" name="loai"
-									placeholder="Loại Thành viên" id="loai">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-loai"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-loai"></p>
-						</div>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Tên Đăng nhập:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="text" class="form-control " value="" name="tkkh"
-									placeholder="Nhập tài khoản" id="account">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-account"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-account"></p>
-						</div>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for=""><span class=""></span>
-						Mật khẩu:</label>
-					<div class="col-sm-10">
-						<div class="row">
-							<div class="col-sm-8">
-								<input type="password" class="form-control " value=""
-									name="pass" placeholder="Nhập mật khẩu" id="pass">
-							</div>
-							<div class="col-sm-2">
-								<p id="icon-pass"></p>
-							</div>
-						</div>
-						<div class="row">
-							<p style="color: red" id="error-pass"></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-success">
-							<span class="glyphicon glyphicon-plus"></span> Thêm
-						</button>
-					</div>
-
-				</div>
-			</form>
-
-		</div>
 		</div>
 		
 

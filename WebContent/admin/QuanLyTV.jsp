@@ -65,8 +65,8 @@
                         <td><%=rs.getNString("MATKHAU") %>
                         <td>
                         <%
-					 String view = "VeiwKhachHang?matv="+rs.getString("IDTV");
-					String del = "XoaKhachHang?matv="+rs.getString("IDTV");
+					 String view = "VeiwThanhVien?ma="+rs.getString("IDTV");
+					String del = "XoaThanhVien?ma="+rs.getString("IDTV");
 					
 					%>
 								<a href="<%=response.encodeURL(del)%>"><button type="submit" class="btn btn-sm btn-danger" id=""
