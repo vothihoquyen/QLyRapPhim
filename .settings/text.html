@@ -1,0 +1,48 @@
+
+@using Project_DatVeXemPhim.Models;
+@model List<Phim>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+@{
+    foreach (var item in Model)
+    {
+        <div class="left-bottom-right-nd" id="lbr">
+            <a href="@Url.Action("chiTietPhim", "ChiTietPhim", new { @maphim = item.MaPhim})">
+                <img src="@Url.Content("~/HinhAnh/" + item.HinhAnh)" width=" 150px"
+                     height="235px">
+            </a>
+    <span class="publish-date-new">
+        <span class="date">@item.ThoiGianChieu</span>
+       
+    </span>
+
+    <div class="trailer" id="tl">
+        <a href="">
+            <img src="~/Content/resources/images/ic-trailer.png"
+                 width="45px" height="45px">
+        </a>
+    </div>
+    <div class="muave" id="mv">
+        <a href="chitietphim.html">MUA VÉ</a>
+    </div>
+
+</div>
+
+        
+    }
+}
+
+     </body>
+</html>
+        
+
+
+
+
+
+
+    

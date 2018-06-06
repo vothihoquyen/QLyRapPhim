@@ -1,0 +1,1416 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title>chiTietPhim</title>
+
+
+        <link rel="stylesheet" href="~/Content/resources/css/CssGioiThieuPhimDatVe.css">
+<link rel="stylesheet" href="~/Content/resources/css/tieude.css">
+<link rel="shortcut icon" href="~/Content/resources/images/logonho.ico" type="image/x-icon" />
+<link rel="icon" href="~/Content/resources/images/logonho.ico" type="image/x-icon" />
+<link rel="stylesheet" href="~/Content/resources/help/css/style.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/resources/css/style3.css" />
+
+<link rel="stylesheet" href="~/Content/resources/css/tieuderapquocthanh.css">
+
+<link rel="stylesheet"
+      href="~/Content/resources/javascript/slider/themes/default/jquery.slider.css" />
+<link rel="stylesheet" href="~/Content/resources/css/menuhide.css" />
+<link rel="stylesheet" href="~/Content/resources/css/cssrapquocthanh.css">
+
+<script type="text/javascript" src="~/Content/resources/javascript/jquery.min.js"></script>
+<script type="text/javascript"
+        src="~/Content/resources/javascript/slider/jquery.slider.min.js"></script>
+    </head>
+    <body >
+
+        @Html.Partial("~/Views/header_footer/HeaderPartialView.cshtml")
+
+
+       
+
+        <script type="text/javascript" >
+            var thanhpho = document.getElementById("select-location");
+            var listthanhpho = document.getElementById("dropdown-location-header");
+
+            thanhpho.addEventListener("mouseover", function () {
+                thanhpho.style.background = "#eee";
+            });
+            thanhpho.addEventListener("mouseout", function () {
+                thanhpho.style.background = "#FFF";
+            });
+
+            thanhpho.addEventListener("click", function () {
+
+                listthanhpho.style.display = "block";
+
+            });
+        </script>
+        <script type="text/javascript">
+            var hochiminh = document.getElementById("1");
+            var nametp = document.getElementById("select-location");
+            var listthanhpho = document.getElementById("dropdown-location-header");
+
+            var hanoi = document.getElementById("2");
+            // ho chi minh
+            hochiminh.addEventListener("mouseover", function () {
+                hochiminh.setAttribute("class", "activeti");
+            });
+            hochiminh.addEventListener("mouseout", function () {
+                hochiminh.removeAttribute("class", "activeti");
+            });
+            hochiminh.addEventListener("click", function () {
+                nametp.innerHTML = "HỒ CHÍ MINH";
+                listthanhpho.style.display = "none";
+            });
+            // hà nội
+            hanoi.addEventListener("mouseover", function () {
+                hanoi.setAttribute("class", "activeti");
+            });
+            hanoi.addEventListener("mouseout", function () {
+                hanoi.removeAttribute("class", "activeti");
+            });
+            hanoi.addEventListener("click", function () {
+                nametp.innerHTML = "HÀ NỘI";
+                listthanhpho.style.display = "none";
+            });
+            // đà nẵng
+            var danang = document.getElementById("3");
+            danang.addEventListener("mouseover", function () {
+                danang.setAttribute("class", "activeti");
+            });
+            danang.addEventListener("mouseout", function () {
+                danang.removeAttribute("class", "activeti");
+            });
+            danang.addEventListener("click", function () {
+                nametp.innerHTML = "ĐÀ NẴNG";
+                listthanhpho.style.display = "none";
+            });
+            //hải phòng
+            var haiphong = document.getElementById("4");
+            haiphong.addEventListener("mouseover", function () {
+                haiphong.setAttribute("class", "activeti");
+            });
+            haiphong.addEventListener("mouseout", function () {
+                haiphong.removeAttribute("class", "activeti");
+            });
+            haiphong.addEventListener("click", function () {
+                nametp.innerHTML = "HẢI PHÒNG";
+                listthanhpho.style.display = "none";
+            });
+            //đồng nai
+            var dongnai = document.getElementById("5");
+            dongnai.addEventListener("mouseover", function () {
+                dongnai.setAttribute("class", "activeti");
+            });
+            dongnai.addEventListener("mouseout", function () {
+                dongnai.removeAttribute("class", "activeti");
+            });
+            dongnai.addEventListener("click", function () {
+                nametp.innerHTML = "ĐỒNG NAI";
+                listthanhpho.style.display = "none";
+            });
+            //khánh hòa
+            var khanhoa = document.getElementById("6");
+            khanhoa.addEventListener("mouseover", function () {
+                khanhoa.setAttribute("class", "activeti");
+            });
+            khanhoa.addEventListener("mouseout", function () {
+                khanhoa.removeAttribute("class", "activeti");
+            });
+            khanhoa.addEventListener("click", function () {
+                nametp.innerHTML = "KHÁNH HÒA";
+                listthanhpho.style.display = "none";
+            });
+            //bình dương
+            var binhduong = document.getElementById("7");
+
+            binhduong.addEventListener("mouseover", function () {
+                binhduong.setAttribute("class", "activeti");
+            });
+            binhduong.addEventListener("mouseout", function () {
+                binhduong.removeAttribute("class", "activeti");
+            });
+            binhduong.addEventListener("click", function () {
+                nametp.innerHTML = "BÌNH DƯƠNG";
+                listthanhpho.style.display = "none";
+            }); //bình thuận
+            var binhthuan = document.getElementById("8");
+            binhthuan.addEventListener("mouseover", function () {
+                binhthuan.setAttribute("class", "activeti");
+            });
+            binhthuan.addEventListener("mouseout", function () {
+                binhthuan.removeAttribute("class", "activeti");
+            });
+            binhthuan.addEventListener("click", function () {
+                nametp.innerHTML = "BÌNH THUẬN";
+                listthanhpho.style.display = "none";
+            });
+            //quảng nnh
+            var quangninh = document.getElementById("9");
+            quangninh.addEventListener("mouseover", function () {
+                quangninh.setAttribute("class", "activeti");
+            });
+            quangninh.addEventListener("mouseout", function () {
+                quangninh.removeAttribute("class", "activeti");
+            });
+            quangninh.addEventListener("click", function () {
+                nametp.innerHTML = "QUẢNG NINH";
+                listthanhpho.style.display = "none";
+            });
+            //cần thơ
+            var cantho = document.getElementById("10");
+            cantho.addEventListener("mouseover", function () {
+                cantho.setAttribute("class", "activeti");
+            });
+            cantho.addEventListener("mouseout", function () {
+                cantho.removeAttribute("class", "activeti");
+            });
+            cantho.addEventListener("click", function () {
+                nametp.innerHTML = "CẦN THƠ";
+                listthanhpho.style.display = "none";
+            });
+            //vũng tàu
+            var vungtau = document.getElementById("11");
+            vungtau.addEventListener("mouseover", function () {
+                vungtau.setAttribute("class", "activeti");
+            });
+            vungtau.addEventListener("mouseout", function () {
+                vungtau.removeAttribute("class", "activeti");
+            });
+            vungtau.addEventListener("click", function () {
+                nametp.innerHTML = "VŨNG TÀU";
+                listthanhpho.style.display = "none";
+            });
+            //quy nhơn
+            var quynhon = document.getElementById("12");
+            quynhon.addEventListener("mouseover", function () {
+                quynhon.setAttribute("class", "activeti");
+            });
+            quynhon.addEventListener("mouseout", function () {
+                quynhon.removeAttribute("class", "activeti");
+            });
+            quynhon.addEventListener("click", function () {
+                nametp.innerHTML = "QUY NHƠN";
+                listthanhpho.style.display = "none";
+            });
+            //huế
+            var hue = document.getElementById("13");
+            hue.addEventListener("mouseover", function () {
+                hue.setAttribute("class", "activeti");
+            });
+            hue.addEventListener("mouseout", function () {
+                hue.removeAttribute("class", "activeti");
+            });
+            hue.addEventListener("click", function () {
+                nametp.innerHTML = "HUẾ";
+                listthanhpho.style.display = "none";
+            });
+            //long xuyên
+            var longxuyen = document.getElementById("14");
+            longxuyen.addEventListener("mouseover", function () {
+                longxuyen.setAttribute("class", "activeti");
+            });
+            longxuyen.addEventListener("mouseout", function () {
+                longxuyen.removeAttribute("class", "activeti");
+            });
+            longxuyen.addEventListener("click", function () {
+                nametp.innerHTML = "LONG XUYÊN";
+                listthanhpho.style.display = "none";
+            });
+            //thái nguyên
+            var thainguyen = document.getElementById("15");
+            thainguyen.addEventListener("mouseover", function () {
+                thainguyen.setAttribute("class", "activeti");
+            });
+            thainguyen.addEventListener("mouseout", function () {
+                thainguyen.removeAttribute("class", "activeti");
+            });
+            thainguyen.addEventListener("click", function () {
+                nametp.innerHTML = "THÁI NGUYÊN";
+                listthanhpho.style.display = "none";
+            });
+            //buôn ma thuột
+            var buonmathuot = document.getElementById("16");
+            buonmathuot.addEventListener("mouseover", function () {
+                buonmathuot.setAttribute("class", "activeti");
+            });
+            buonmathuot.addEventListener("mouseout", function () {
+                buonmathuot.removeAttribute("class", "activeti");
+            });
+            buonmathuot.addEventListener("click", function () {
+                nametp.innerHTML = "BUÔN MA THUỘT";
+                listthanhpho.style.display = "none";
+            });
+            //bắc giang
+            var bacgiang = document.getElementById("17");
+            bacgiang.addEventListener("mouseover", function () {
+                bacgiang.setAttribute("class", "activeti");
+            });
+            bacgiang.addEventListener("mouseout", function () {
+                bacgiang.removeAttribute("class", "activeti");
+            });
+            bacgiang.addEventListener("click", function () {
+                nametp.innerHTML = "BẮC GIANG";
+                listthanhpho.style.display = "none";
+            });
+            //bến tre
+            var bentre = document.getElementById("18");
+            bentre.addEventListener("mouseover", function () {
+                bentre.setAttribute("class", "activeti");
+            });
+            bentre.addEventListener("mouseout", function () {
+                bentre.removeAttribute("class", "activeti");
+            });
+            bentre.addEventListener("click", function () {
+                nametp.innerHTML = "BẾN TRE";
+                listthanhpho.style.display = "none";
+            });
+            //phú thọ
+            var phutho = document.getElementById("19");
+            phutho.addEventListener("mouseover", function () {
+                phutho.setAttribute("class", "activeti");
+            });
+            phutho.addEventListener("mouseout", function () {
+                phutho.removeAttribute("class", "activeti");
+            });
+            phutho.addEventListener("click", function () {
+                nametp.innerHTML = "PHÚ THỌ";
+                listthanhpho.style.display = "none";
+            });
+            //ninh bình
+            var ninhbinh = document.getElementById("20");
+            ninhbinh.addEventListener("mouseover", function () {
+                ninhbinh.setAttribute("class", "activeti");
+            });
+            ninhbinh.addEventListener("mouseout", function () {
+                ninhbinh.removeAttribute("class", "activeti");
+            });
+            ninhbinh.addEventListener("click", function () {
+                nametp.innerHTML = "NINH BÌNH";
+                listthanhpho.style.display = "none";
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                var check = false;
+                var checkrap = false;
+                var checkkhuyenmai = false;
+                var checkphim = false;
+                var checklichphim = false;
+                $("#blogdienanh").click(function () {
+                    if (check == false) {
+                        $(".subMenu").css("display", "block");
+                        $("#phim-hot").css("margin-top", "10px");
+                        $(".subMenu1").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu3").css("display", "none");
+                        check = true;
+                        checkrap = false;
+                        checkphim = false;
+                        checkkhuyenmai = false;
+                        checklichphim = false;
+                    } else {
+                        if (check == true) {
+                            $(".subMenu").css("display", "none");
+                            $("#phim-hot").css("margin-top", "100px");
+                            $(".subMenu1").css("display", "none");
+                            $(".subMenu2").css("display", "none");
+                            $(".subMenu4").css("display", "none");
+                            $(".subMenu3").css("display", "none");
+                            check = false;
+                            checkrap = false;
+                            checkphim = false;
+                            checkkhuyenmai = false;
+                            checklichphim = false;
+                        }
+                    }
+                });
+                $("#rap").click(function () {
+                    if (checkrap == false) {
+                        $(".subMenu1").css("display", "block");
+                        $(".subMenu").css("display", "none");
+                        $("#phim-hot").css("margin-top", "10px");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        $(".subMenu3").css("display", "none");
+                        checkrap = true;
+                        check = false;
+                        checkphim = false;
+                        checkkhuyenmai = false;
+                        checklichphim = false;
+                    } else {
+                        $(".subMenu1").css("display", "none");
+                        $(".subMenu").css("display", "none");
+                        $("#phim-hot").css("margin-top", "100px");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu3").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        checkrap = false;
+                        check = false;
+                        checkphim = false;
+                        checkkhuyenmai = false;
+                        checklichphim = false;
+                    }
+
+                });
+
+                $("#phim").click(function () {
+                    if (checkphim == false) {
+                        $(".subMenu2").css("display", "block");
+                        $(".subMenu").css("display", "none");
+                        $(".subMenu1").css("display", "none");
+                        $("#phim-hot").css("margin-top", "10px");
+                        $(".subMenu3").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        checkphim = true;
+                        checkrap = false;
+                        check = false;
+                        checkkhuyenmai = false;
+                        checklichphim = false;
+                    } else {
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu").css("display", "none");
+                        $(".subMenu1").css("display", "none");
+                        $(".subMenu3").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        $("#phim-hot").css("margin-top", "100px");
+                        checkphim = false;
+                        checkrap = false;
+                        check = false;
+                        checkkhuyenmai = false;
+                        checklichphim = false;
+                    }
+                });
+                $("#khuyenmai").click(function () {
+                    if (checkkhuyenmai == false) {
+                        $(".subMenu3").css("display", "block");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu").css("display", "none");
+                        $(".subMenu1").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        checkkhuyenmai = true;
+                        checkphim = false;
+                        checkrap = false;
+                        check = false;
+                        checklichphim = false;
+                    } else {
+                        $(".subMenu3").css("display", "none");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu").css("display", "none");
+                        $(".subMenu1").css("display", "none");
+                        $(".subMenu4").css("display", "none");
+                        checkkhuyenmai = false;
+                        checkphim = false;
+                        checkrap = false;
+                        check = false;
+                        checklichphim = false;
+                    }
+                });
+                $("#lichchieu").click(function () {
+                    if (checklichphim == false) {
+                        $(".subMenu4").css("display", "block");
+                        $(".subMenu3").css("display", "none");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu").css("display", "none");
+                        $(".subMenu1").css("display", "none");
+                        $("#phim-hot").css("margin-top", "10px");
+                        checklichphim = true;
+                        checkkhuyenmai = false;
+                        checkphim = false;
+                        checkrap = false;
+                        check = false;
+                    } else {
+                        $(".subMenu4").css("display", "none");
+                        $(".subMenu3").css("display", "none");
+                        $(".subMenu2").css("display", "none");
+                        $(".subMenu").css("display", "none");
+                        $(".subMenu1").css("display", "none");
+                        $("#phim-hot").css("margin-top", "100px");
+                        checklichphim = false;
+                        checkkhuyenmai = false;
+                        checkphim = false;
+                        checkrap = false;
+                        check = false;
+                    }
+                });
+
+            })
+        </script>
+        <!-- mở slider phần menu mở rộng-->
+        <script>
+            var boolphim = false;
+            var boolrap = false;
+            var boolngay = false;
+            var boolthanhpho = false;
+            $(document).ready(function () {
+                $("#phim1").click(function () {
+                    if (boolphim == false) {
+                        $(".dd-options").css("display", "block");
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-optionsngay").css("display", "none");
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolphim = true;
+                        boolrap = false;
+                        boolngay = false;
+                        boolthanhpho = false;
+                    } else {
+                        $(".dd-options").css("display", "none");
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-optionsngay").css("display", "none");
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolphim = false;
+                        boolrap = false;
+                        boolngay = false;
+                        boolthanhpho = false;
+                    }
+
+                })
+                $("#rap1").click(function () {
+                    if (boolrap == false) {
+                        $(".dd-optionsrap").css("display", "block");
+                        $(".dd-options").css("display", "none");
+                        $(".dd-optionsngay").css("display", "none");
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolrap = true;
+                        boolngay = false;
+                        boolthanhpho = false;
+                        boolphim = false;
+                    } else {
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-options").css("display", "none");
+                        $(".dd-optionsngay").css("display", "none");
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolrap = false;
+                        boolngay = false;
+                        boolthanhpho = false;
+                        boolphim = false;
+                    }
+                })
+                $("#ngay").click(function () {
+                    if (boolngay == false) {
+                        $(".dd-optionsngay").css("display", "block");
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-options").css("display", "none");
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolngay = true;
+                        boolrap = false;
+                        boolthanhpho = false;
+                        boolphim = false;
+                    } else {
+
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-options").css("display", "none");
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolngay = false;
+                        $(".dd-optionsngay").css("display", "none");
+                        boolrap = false;
+                        boolthanhpho = false;
+                        boolphim = false;
+                    }
+                })
+                $("#thanhpho").click(function () {
+                    if (boolthanhpho == false) {
+                        $(".dd-optionsthanhpho").css("display", "block");
+                        $(".dd-optionsngay").css("display", "none");
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-options").css("display", "none");
+                        boolthanhpho = true;
+                        boolngay = false;
+                        boolrap = false;
+                        boolphim = false;
+                    } else {
+
+                        $(".dd-optionsngay").css("display", "none");
+                        $(".dd-optionsrap").css("display", "none");
+                        $(".dd-options").css("display", "none");
+                        boolthanhpho = false;
+                        $(".dd-optionsthanhpho").css("display", "none");
+                        boolngay = false;
+                        boolrap = false;
+                        boolphim = false;
+                    }
+                })
+                /*mở jq sử lí trong việc chọn phim*/
+                $("#1111").click(function () {
+                    var linkanh = $("#1111 img").attr("src");
+                    var namephim = $("#1111 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+
+                })
+                $("#0").click(function () {
+                    var linkanh = $("#0 img").attr("src");
+                    var namephim = $("#0 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#21").click(function () {
+                    var linkanh = $("#21 img").attr("src");
+                    var namephim = $("#21 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#31").click(function () {
+                    var linkanh = $("#31 img").attr("src");
+                    var namephim = $("#31 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#41").click(function () {
+                    var linkanh = $("#41 img").attr("src");
+                    var namephim = $("#41 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#51").click(function () {
+                    var linkanh = $("#51 img").attr("src");
+                    var namephim = $("#51 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#61").click(function () {
+                    var linkanh = $("#61 img").attr("src");
+                    var namephim = $("#61 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#71").click(function () {
+                    var linkanh = $("#71 img").attr("src");
+                    var namephim = $("#71 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#81").click(function () {
+                    var linkanh = $("#81 img").attr("src");
+                    var namephim = $("#81 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#91").click(function () {
+                    var linkanh = $("#91 img").attr("src");
+                    var namephim = $("#91 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                $("#101").click(function () {
+                    var linkanh = $("#101 img").attr("src");
+                    var namephim = $("#101 .dd-option-text").html();
+                    $("#phim1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#phim1 .dd-selected-text").html(namephim);
+                    $("#phim1 small").html(namephim);
+                    $(".dd-options").css("display", "none");
+                    boolphim = false;
+                })
+                /*đóng jq sử lí trong việc chọn phim*/
+                /*mở jq sử lí trong việc chọn rap*/
+                $("#tatca").click(function () {
+                    var nameb = $("#tatca .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "none");
+                    $("#rap1 .dd-selected .dd-selected-text").html(nameb);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+                $("#rap003").click(function () {
+                    var linkanh = $("#rap003 img").attr("src");
+                    var namerap = $("#rap003 .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "block");
+                    $("#rap1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#rap1 .dd-selected .dd-selected-text").html(namerap);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+
+                $("#bhdstarcineplex").click(function () {
+                    var linkanh = $("#bhdstarcineplex img").attr("src");
+                    var namerap = $("#bhdstarcineplex .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "block");
+                    $("#rap1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#rap1 .dd-selected .dd-selected-text").html(namerap);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+                $("#galaxycinema").click(function () {
+                    var linkanh = $("#galaxycinema img").attr("src");
+                    var namerap = $("#galaxycinema .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "block");
+                    $("#rap1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#rap1 .dd-selected .dd-selected-text").html(namerap);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+                $("#rap002").click(function () {
+                    var linkanh = $("#rap002 img").attr("src");
+                    var namerap = $("#rap002 .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "block");
+                    $("#rap1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#rap1 .dd-selected .dd-selected-text").html(namerap);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+                $("#rap001").click(function () {
+                    var linkanh = $("#rap001 img").attr("src");
+                    var namerap = $("#rap001 .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "block");
+                    $("#rap1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#rap1 .dd-selected .dd-selected-text").html(namerap);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+                $("#cumrapkhac").click(function () {
+                    var linkanh = $("#cumrapkhac img").attr("src");
+                    var namerap = $("#cumrapkhac .dd-option-text").html();
+                    $("#rap1 .dd-selected-image").css("display", "block");
+                    $("#rap1 .dd-selected img").attr({
+                        src: linkanh
+                    });
+                    $("#rap1 .dd-selected .dd-selected-text").html(namerap);
+                    $(".dd-optionsrap").css("display", "none");
+                    boolrap = false;
+                })
+                /*đóng jq sử lí trong việc chọn rap*/
+                /*mở jq sử lí trong việc chọn ngày*/
+                $("#ngay1").click(function () {
+                    var ngaychu = $("#ngay1 .dd-option-text").html();
+                    var ngayso = $("#ngay1 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                $("#ngay0").click(function () {
+                    var ngaychu = $("#ngay0 .dd-option-text").html();
+                    var ngayso = $("#ngay0 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                $("#ngay2").click(function () {
+                    var ngaychu = $("#ngay2 .dd-option-text").html();
+                    var ngayso = $("#ngay2 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                $("#ngay3").click(function () {
+                    var ngaychu = $("#ngay3 .dd-option-text").html();
+                    var ngayso = $("#ngay3 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                $("#ngay4").click(function () {
+                    var ngaychu = $("#ngay4 .dd-option-text").html();
+                    var ngayso = $("#ngay4 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                $("#ngay5").click(function () {
+                    var ngaychu = $("#ngay5 .dd-option-text").html();
+                    var ngayso = $("#ngay5 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                $("#ngay6").click(function () {
+                    var ngaychu = $("#ngay6 .dd-option-text").html();
+                    var ngayso = $("#ngay6 .dd-option-description").html();
+                    $("#ngay .dd-selected-text").html(ngaychu);
+                    $("#ngay .dd-selected-description").html(ngayso);
+                    boolngay = false;
+                    $(".dd-optionsngay").css("display", "none");
+
+                })
+                /*đóng jq sử lí trong việc chọn ngay*/
+                /*mở jq sủ lí trong việc chọn thành phố*/
+                $("#hanoi").click(function () {
+                    var tentp = $("#hanoi .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+
+                $("#hochiminh").click(function () {
+                    var tentp = $("#hochiminh .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#danang").click(function () {
+                    var tentp = $("#danang .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#haiphong").click(function () {
+                    var tentp = $("#haiphong .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#dongnai").click(function () {
+                    var tentp = $("#dongnai .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#haiphong").click(function () {
+                    var tentp = $("#haiphong .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#khanhhoa").click(function () {
+                    var tentp = $("#khanhhoa .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#binhduong").click(function () {
+                    var tentp = $("#binhduong .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#binhthuan").click(function () {
+                    var tentp = $("#binhthuan .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#quangninh").click(function () {
+                    var tentp = $("#quangninh .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#cantho").click(function () {
+                    var tentp = $("#cantho .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+
+                $("#vungtau").click(function () {
+                    var tentp = $("#vungtau .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#quynhon").click(function () {
+                    var tentp = $("#quynhon .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#hue").click(function () {
+                    var tentp = $("#hue .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#longxuyen").click(function () {
+                    var tentp = $("#longxuyen .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#thainguyen").click(function () {
+                    var tentp = $("#thainguyen .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#buonmathuoc").click(function () {
+                    var tentp = $("#buonmathuoc .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#bacgiang").click(function () {
+                    var tentp = $("#bacgiang .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#bentre").click(function () {
+                    var tentp = $("#bentre .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#phutho").click(function () {
+                    var tentp = $("#phutho .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+                $("#ninhbinh").click(function () {
+                    var tentp = $("#ninhbinh .dd-option-text").html();
+                    $("#thanhpho .dd-selected-text").html(tentp);
+                    boolthanhpho = false;
+                    $(".dd-optionsthanhpho").css("display", "none");
+                })
+
+                /*đóng jq sử lí trong việc chọn thành phố*/
+            })
+        </script>
+
+        <!-- mở blog điện ảnh -->
+       
+        <!-- đóng lịch chiếu -->
+        <!-- đóng slider phần menu mở rộng-->
+        <div id="content">
+            <!-- mở div logo -->
+            <!-- đóng div menu -->
+            <!-- mở phần giới thiệu phim -->
+            <div id=content-gt>
+                <div id="video-gt">
+                    <img src="~\Content\resources\images\litebox-close.png" id="link-video">
+                    <iframe width="100%" height="350"
+                            src="https://www.youtube.com/embed/CWLx8twyJPM?list=PL-bFbMqoCDjWMhthhMc4aSzq1UG6pT5IP" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div id="gioithieuphim">
+                    <div id="thong-tin">
+                        <h2> @Model.TenPhimTV</h2>
+                        <h3> @Model.TenPhimTA<span class="label">16+</span></h3>
+                        <p>&nbsp;</p>
+                        <p>
+                            <span>@Model.ThoiGianChieu</span>
+                            <span>Tiếng Anh phụ đề tiếng Việt</span>
+                        </p>
+                        
+                        <p>&nbsp; </p>
+                        <p>@Model.ChiTietPhim</p>
+
+                        <br>
+
+                        
+                       
+                        <div id="khoi-chieu">
+                            <span>Khởi chiếu : @Model.NgayKhoiChieu</span>
+                        </div>
+                    </div>
+
+                    <div id="images-main">
+                        <img src="@Url.Content("~/HinhAnh/"+@Model.HinhAnh)" width="980px" height="400px">
+
+                    </div>
+                    <div id="play">
+                        <img src="~/Content/resources/images/ic-play.png" width="100px"
+                             height="100px" id="play">
+                    </div>
+                    <div id="share">
+                        <img src="~/Content/resources/images/ic-share.png" width="40px" height="40px">
+                    </div>
+                    <div id="d2">
+                        <img src="~/Content/resources/images/2d_digital.png" width="40px"
+                             height="40px">
+                    </div>
+                </div>
+            </div>
+            <!-- đóng phần giới thiệu phim -->
+            <script type="text/javascript">
+                var actionvideoclose = document.getElementById("link-video");
+                var actionvideoplay = document.getElementById("play");
+
+                var video = document.getElementById("video-gt");
+                var thongtin = document.getElementById("gioithieuphim");
+
+                actionvideoclose.addEventListener("click", function () {
+                    video.style.display = "none";
+                    thongtin.style.display = "block";
+                });
+                actionvideoplay.addEventListener("click", function () {
+                    video.style.display = "block";
+                    thongtin.style.display = "none";
+                });
+            </script>
+            <!-- mở đặt vé phim -->
+            <!-- đóng đặt vé phim -->
+            <script>
+                function getLCday() {
+                    $.ajax({
+                        type: "POST",
+                        url: "ChiTietPhimController/",
+                        contentType: "application/json ; charset=utf-8",
+                        dataType: "json",
+                        data: {'ngaychieu':$("#getngay").html() } ,
+                        success: function (msg) {
+                            $("#modau").empty();
+                            var lLoaiRap = msg.d;
+                            var html5 = "</div>"
+                                         + "</div>"
+                                         + "<div style=clear : both ></div>";
+                            var html6 = "</div>"
+                                         + "</div>";
+
+                            for (var i = 0 ; i < lLoaiRap.length ; i++) {
+                                alert("vvv");
+                                $("#modau").append("<div id=datve-left-title>"
+                                         + "<div id=datve-left-title-images>"
+                                          + " <img"
+                                          + " src='${pageContext.request.contextPath}/" + lLoaiRap[i].anhLoaiRap + "'"
+                                              + " width=50px height=50px>"
+                                     + "</div>"
+                                     + "<div id=ten-rap>"
+                                          + "<span>" + lLoaiRap[i].tenLoaiRap + "</span>"
+                                     + "</div>"
+                                     + "<div id=ban-ve>"
+                                          + "<small>Bán vé online</small>"
+                                     + "</div>"
+                                     + "<div id=click>"
+                                        + "<img"
+                                + "src=${pageContext.request.contextPath}/resources/images/click-me.png"
+                                   + "width=15px height=20px><span>Click vào một"
+                                    + "xuất chiếu để đặt vé</span>"
+                                     + "</div>"
+                                + "</div>");
+                                $("#modau").append("<div class=wrapContCinema display id=wrapContCinema4>"
+                                          + "<div class=itemCinema data-cid=28"
+                                           + "data-cname=BHD Star Bitexco>")
+                                for (var j = 0 ; j < lLoaiRap[i].rap.length ; j++) {
+
+                                    $(".itemCinema").append("<div>"
+									           + "<h3>" +lLoaiRap[i].rap[j].rap.tenrap + "</h3>"
+										       + "</div> "
+										       + "<div class=listTypeTime>"
+											    + " <img"
+												  + " src=${pageContext.request.contextPath}/resources/images/2d-lt-icon.png"
+												  + " height=26 width=30 />"
+											      + " <div class=typeTime id=time >");
+                                    for (var z = 0; z <lLoaiRap[i].rap[j].lichChieu.length ; z++) {
+                                        alert(lLoaiRap[i].rap[j].lichChieu.length);
+                                        $("#time").append("<a class=s s1"
+									            + " href=${pageContext.request.contextPath}/datghe/senddatghe?anhphim=${phim.anhphim}&tenphim=${phim.tenphimtv}&tenrap='" + loaiRapDTO.rap[j].rap.tenrap + "'&giochieu='" + loaiRapDTO.rap[j].lichChieu[z] + "'&ngay=${date}"
+									            + " target=_blank rel=nofollow>" + lLoaiRap[i].rap[j].lichChieu[z] + "</a>");
+                                    }
+                                    $(".itemCinema").append(html5);
+                                }
+                            }
+                            $("#modau").append(html6)
+
+                        },
+                        error: function () {
+                            alert("error...");
+                        }
+                    });
+                };
+            </script>
+
+            <div id="datve">
+                <div id="datve-left">
+                    <div id="ngay-chieu">
+                        <div class="main">
+                            <section class="showtime">
+
+                                <div class="select select-cinema" style="width: 33%">
+                                    <div style="width: 100%;" class="dd-container" id="select-pcinema">
+                                        <div style="width: 100%; background: rgba(238, 238, 238, 0.72) none repeat scroll 0% 0%;"
+                                             class="dd-select" id="rap1">
+                                            <a class="dd-selected">
+                                                <img class="dd-selected-image"
+                                                     src="~/Content/resources/images/logocinestar.png"><span class="dd-selected-text">CineStar Quốc Thanh</span>
+                                            </a><span class="dd-pointer dd-pointer-down"></span>
+                                        </div>
+                                        <ul style="width: 100%;" class="dd-optionsrap dd-click-off-close">
+                                            <li>
+                                                <a class="dd-option" id="tatca">
+                                                    <input class="dd-option-value" value="0" type="hidden"> <span class="dd-option-text">Tất cả các rạp</span> <small class="dd-option-description dd-desc">Tất cả các rạp</small>
+                                                </a>
+                                            </li>
+                                            @{
+                                                foreach (var item in (List<rap>)ViewBag.listrap)
+                                                {
+                                                    <li>
+                                                        <a class="dd-option dd-option-selected"
+                                                           id="@item.MARAP">
+                                                            <input class="dd-option-value" value="4"
+                                                                   type="hidden"> <img class="dd-option-image"
+                                                                                       src="@Url.Content("~/HinhAnh/" + item.ANH)">
+                                                            <span class="dd-option-text">@item.TENRAP</span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                <div class="select select-date" style="width: 29%">
+                                    <div style="width: 100%;" class="dd-container" id="select-date">
+                                        <div style="width: 100%; background: rgba(238, 238, 238, 0.72) none repeat scroll 0% 0%;"
+                                             class="dd-select" id="ngay">
+                                            <a class="dd-selected">
+                                                <span class="dd-selected-text">
+                                                    Hôm nay
+                                                </span><small class="dd-selected-description dd-desc dd-selected-description-truncated" id="getngay">2016-04-20</small>
+                                            </a><span class="dd-pointer dd-pointer-down"></span>
+                                        </div>
+                                        <ul style="width: 100%;" class="dd-optionsngay dd-click-off-close">
+                                            <li>
+                                                <a class="dd-option dd-option-selected clickngay" id="ngay0">
+                                                    <input class="dd-option-value" value="2016-04-20" type="hidden">
+                                                    <span class="dd-option-text">Hôm nay</span> <small class="dd-option-description dd-desc " id="ngaycp">2016-04-20</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dd-option" id="ngay1">
+                                                    <input class="dd-option-value" value="2016-04-21" type="hidden">
+                                                    <span class="dd-option-text">Ngày mai</span> <small class="dd-option-description dd-desc">2016-04-21</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dd-option" id="ngay2">
+                                                    <input class="dd-option-value" value="2016-04-22" type="hidden">
+                                                    <span class="dd-option-text">Thứ sáu</span> <small class="dd-option-description dd-desc">2016-04-22</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dd-option" id="ngay3">
+                                                    <input class="dd-option-value" value="2016-04-23" type="hidden">
+                                                    <span class="dd-option-text">Thứ bảy</span> <small class="dd-option-description dd-desc">2016-04-23</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dd-option" id="ngay4">
+                                                    <input class="dd-option-value" value="2016-04-24" type="hidden">
+                                                    <span class="dd-option-text">Chủ nhật</span> <small class="dd-option-description dd-desc">2016-04-24</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dd-option" id="ngay5">
+                                                    <input class="dd-option-value" value="2016-04-25" type="hidden">
+                                                    <span class="dd-option-text">Thứ hai</span> <small class="dd-option-description dd-desc">2016-04-25</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dd-option" id="ngay5">
+                                                    <input class="dd-option-value" value="2016-04-26" type="hidden">
+                                                    <span class="dd-option-text">Thứ ba</span> <small class="dd-option-description dd-desc">2016-04-26</small>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="select select-lo" style="margin-right: 0; width: 34%">
+                                    <div style="width: 100%;" class="dd-container" id="select-lo">
+                                        <div style="width: 100%; background: rgba(238, 238, 238, 0.72) none repeat scroll 0% 0%;"
+                                             class="dd-select" id="thanhpho">
+                                            <a class="dd-selected">
+                                                <span class="dd-selected-text">
+                                                    Hồ
+                                                    Chí Minh
+                                                </span>
+                                            </a><span class="dd-pointer dd-pointer-down"></span>
+                                        </div>
+                                        <ul style="width: 100%;"
+                                            class="dd-optionsthanhpho dd-click-off-close">
+                                            @{
+                                                foreach (var item in (List<thanhpho>)ViewBag.listtp)
+                                                {
+                                                    <li>
+                                                        <a class="dd-option dd-option-selected" id="hochiminh">
+                                                            <input class="dd-option-value" value="1" type="hidden"> <span class="dd-option-text">@item.TENTHANHPHO</span>
+                                                        </a>
+                                                    </li>
+                                                }
+
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                    <div id="modau">
+                      
+                        
+                        
+                        @{
+                            foreach (var item1 in (List<rap>)ViewBag.r)
+                            {
+                                <div id="datve-left-title">
+                                    <div id="datve-left-title-images">
+                                        <img src="@Url.Content("~/HinhAnh/" + item1.ANH)"
+                                             width="50px" height="50px">
+                                    </div>
+                                    <div id="ten-rap">
+                                        <span>@item1.TENRAP</span>
+                                    </div>
+                                    <div id="ban-ve">
+                                        <small>Bán vé online</small>
+                                    </div>
+                                    <div id="click">
+                                        <img src="~/Content/resources/images/click-me.png" width="15px"
+                                             height="20px"><span>
+                                            Click vào một xuất chiếu để đặt
+                                            vé
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="wrapContCinema display" id="wrapContCinema4">
+                                    <div class="itemCinema" data-cid="28" data-cname="BHD Star Bitexco">
+
+                                        <div>
+                                            <h3>@item1.LOAIRAP</h3>
+
+                                        </div>
+                                       
+
+
+                                        <div class="listTypeTime">
+                                            <img src="~/Content/resources/images/2d-lt-icon.png" alt="" height="26" width="30">
+                                            <div class="typeTime">
+                                                @{
+                                foreach (var item in (List<string>)ViewBag.gio)
+                                {
+                                    <a class="s s1" href="@Url.Action("datGhe", "DatGhe", new { @maphim = item1.MAPHIM , item1
+                                                     .MARAP,item1.TENRAP})"
+                                       target="_blank" rel="nofollow">@item</a>
+
+                                }
+}
+
+                                            </div>
+                                        </div>
+
+                                        
+
+
+
+                                        <div style="clear: both"></div>
+
+
+                                    </div>
+
+                                </div>
+                            }
+                        } 
+            </div>
+                    
+                </div>
+
+                <div id="datve-right">
+                    <!-- mở title -->
+                    <div id="left-top">
+                        <a href="">Diễn viên</a><br> <span>Diễn viên trong phim</span>
+                    </div>
+                    <div id="ten-dien-vien">
+                        <ul class="blockList">
+
+                            <li>
+                                <a href="/dien-vien/2111-adam-driver.html" class="imgThumb">
+                                    <img src="http://s3.img.edn.vn/123phim/2015/09/adam-driver-14410935603461.jpg" alt="Sevier" width="65" height="65" />
+                                </a>
+                                <div class="blockContInfo">
+                                    <h4 class="titleItemSmall">
+                                        <a href="/dien-vien/2111-adam-driver.html" class="name">Adam Driver</a><br />
+                                        <span class="support-text" style="font-size: 12px;color:#939393;">Sevier</span>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/dien-vien/2412-kirsten-dunst.html" class="imgThumb">
+                                    <img src="http://s3.img.edn.vn/123phim/2016/03/kirsten-dunst-14581919655684.jpg" alt="Sarah" width="65" height="65" />
+                                </a>
+                                <div class="blockContInfo">
+                                    <h4 class="titleItemSmall">
+                                        <a href="/dien-vien/2412-kirsten-dunst.html" class="name">Kirsten Dunst</a><br />
+                                        <span class="support-text" style="font-size: 12px;color:#939393;">Sarah</span>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/dien-vien/278-joel-edgerton.html" class="imgThumb">
+                                    <img src="http://s3.img.edn.vn/123phim/2014/10/e8904b12152bc948bb84baab4ae8830a.jpg" alt="Lucas" width="65" height="65" />
+                                </a>
+                                <div class="blockContInfo">
+                                    <h4 class="titleItemSmall">
+                                        <a href="/dien-vien/278-joel-edgerton.html" class="name">Joel Edgerton</a><br />
+                                        <span class="support-text" style="font-size: 12px;color:#939393;">Lucas</span>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/dien-vien/361-michael-shannon.html" class="imgThumb">
+                                    <img src="http://s3.img.edn.vn/123phim/2014/10/3faf36b54251ab7c634a3690e1a9b37e.jpg" alt="Roy" width="65" height="65" />
+                                </a>
+                                <div class="blockContInfo">
+                                    <h4 class="titleItemSmall">
+                                        <a href="/dien-vien/361-michael-shannon.html" class="name">Michael Shannon</a><br />
+                                        <span class="support-text" style="font-size: 12px;color:#939393;">Roy</span>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/dien-vien/2411-jeff-nichols.html" class="imgThumb">
+                                    <img src="http://s3.img.edn.vn/123phim/2016/03/jeff-nichols-14581917720726.jpg" alt="Đạo Diễn" width="65" height="65" />
+                                </a>
+                                <div class="blockContInfo">
+                                    <h4 class="titleItemSmall">
+                                        <a href="/dien-vien/2411-jeff-nichols.html" class="name">Jeff Nichols</a><br />
+                                        <span class="support-text" style="font-size: 12px;color:#939393;">Đạo Diễn</span>
+                                    </h4>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div id="gtnd-phim">
+                        <div id="hinh-phim-bt">
+                            <a href="">
+                                <img src="@Url.Content("~/HinhAnh/"+@Model.HinhAnh)"
+                                     width="100px" height="100px">
+                            </a>
+                        </div>
+                        <div class="noi-dung-hinh-bt">
+                            <a href="">
+                                <small class="phim123">123phim</small>@Model.TheLoai
+                            </a> <br>@Model.Title
+                        </div>
+                        <div id="hinh-phim-bt">
+                            <a href="">
+                                <img src="@Url.Content("~/HinhAnh/"+@Model.HinhAnh)"
+                                     width="100px" height="100px">
+                            </a>
+                        </div>
+                        <div class="noi-dung-hinh-bt">
+                            <a href="">@Model.TenPhimTV</a> <br>@Model.NhaSanXuat
+                        </div>
+
+
+
+                    </div>
+                    <div id="thu-vien-hinh">
+                        <a href="">Thư viện hình</a><br>
+                    </div>
+                    <div id="main-thu-vien-hinh">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183337792_150x100.jpg">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183338956_238x100.jpg">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183339710_158x100.jpg">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183341327_150x100.jpg">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183341369_150x100.jpg">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183341411_150x100.jpg">
+                        <img src="~/Content/resources/images/loi-nguyen-con-dam-bich-queen-of-spades-14435183341839_239x100.jpg">
+
+
+                    </div>
+                    <div class="fb-comments"
+                         data-href="https://www.facebook.com/Vietle-586951854788230/?skip_nax_wizard=true"
+                         data-width="500" data-numposts="5"></div>
+                    
+                    <div id="thu-vien-hinh">
+                        <a href="">Có thể bạn quan tâm</a><br> <span>
+                            Phim liên
+                            quan
+                        </span>
+                    </div>
+                    <div id="phim-quan-tam">
+
+                        @Html.Action("PhimSapChieu", "PhimSapChieu")
+
+
+                    </div>
+                    <!-- đóng title -->
+                </div>
+                <!-- mở phần footer -->
+            </div>
+
+                
+                <div id="footer">
+                    @Html.Partial("~/Views/header_footer/FooterPartialView.cshtml")
+
+                </div>
+                <!-- đóng phần footer -->
+            </div>
+    </body>
+</html>
+

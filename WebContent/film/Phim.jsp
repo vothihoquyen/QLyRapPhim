@@ -19,21 +19,15 @@
 	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/font-awesome/css/font-awesome.css"
 	rel="stylesheet" type="text/css" />
 <link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/bootstrap/css/bootstrap.css"
-	rel="stylesheet" type="text/css" />
+	href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/slick/slick/slick.css"
-	rel="stylesheet" type="text/css" />
+	href="../css/slick/slick.css" rel="stylesheet" type="text/css" />
 <link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/slick/slick/slick-theme.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/style.master.css"
-	rel="stylesheet" type="text/css" />
+	href="../css/slick/slick-theme.css" rel="stylesheet" type="text/css" />
+<link href="../css/style.master.css" rel="stylesheet" type="text/css" />
 
 
 
-<!--   <script type="text/javascript" src="/App_Themes/lotte/Content/jquery-3.1.1.min.js"></script> -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -43,7 +37,7 @@
 <script type="text/javascript"
 	src="../js/jQuery.print.js"></script>
 <script type="text/javascript"
-	src="/App_Themes/lotte/Content/slick/slick/slick.js"></script>
+	src="../js/slick.js"></script>
 
 </head>
 <body>
@@ -57,8 +51,8 @@
 					<li role="presentation" class="active"><a href="#nowPlaying"
 						aria-controls="nowPlaying" role="tab" data-toggle="tab"
 						class="btn"> Phim đang chiếu </a></li>
-					<li role="presentation"><a href="#commingSoon"
-						aria-controls="commingSoon" role="tab" data-toggle="tab"
+					<li role="presentation"><a href="PhimSapChieu.jsp"
+					 role="tab" data-toggle="tab"
 						class="btn"> Phim sắp chiếu </a></li>
 				</ul>
 			</div>
@@ -71,10 +65,7 @@
 		<div class="row">
 			<div class="tab-content nav-tabs-content movie-bt-30 col-pad-8">
 				<div role="tabpanel" class="tab-pane active" id="nowPlaying">
-
 					<div class="col-xs-3">
-
-
 						<div class="movie-box">
 							<div class="movie-img img-background"
 								style="background-image: url('../images/emgaimua.jpg')"></div>
@@ -88,9 +79,8 @@
 							</div>
 							<div class="movie-footer">
 								<div class="movie-name">
-									<a title="(C18) SELFIE CÙNG THẦN CHẾT "
-										href="/Phim/SELFIE-CUNG-THAN-CHET.aspx"> (C18) SELFIE CÙNG
-										THẦN ... </a>
+									<a title="(P01) SELFIE CÙNG THẦN CHẾT "
+										href="/Phim/SELFIE-CUNG-THAN-CHET.aspx"> (P01) EM GÁi MƯA </a>
 								</div>
 							</div>
 						</div>
@@ -98,11 +88,9 @@
 					</div>
 
 					<div class="col-xs-3">
-
-
 						<div class="movie-box">
 							<div class="movie-img img-background"
-								style="background-image: url('/getattachment/d51c992f-8aef-402d-b55c-5beb568abcef/NodeAlias.aspx?width=275&height=390')">
+								style="background-image: url('../images/dao-cua-nhung-chu-cho.jpg')">
 							</div>
 							<div class="movie-overlay">
 								<div class="over">
@@ -114,8 +102,8 @@
 							</div>
 							<div class="movie-footer">
 								<div class="movie-name">
-									<a title="(C13) ĐẢO CỦA NHỮNG CHÚ CHÓ"
-										href="/Phim/ĐAO-CUA-NHUNG-CHU-CHO.aspx"> (C13) ĐẢO CỦA
+									<a title="(P08) ĐẢO CỦA NHỮNG CHÚ CHÓ"
+										href="/Phim/ĐAO-CUA-NHUNG-CHU-CHO.aspx"> (P08) ĐẢO CỦA
 										NHỮNG CHÚ ... </a>
 								</div>
 							</div>
