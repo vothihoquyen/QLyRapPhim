@@ -61,10 +61,7 @@
 	type="text/css" />
 <link rel="stylesheet" href="templates/hot_theatre/css/template_css.css"
 	type="text/css" />
-<!--[if lt IE 9]>
-	<script src="/theatre/templates/hot_theatre/js/html5shiv.min.js"></script>
-	<script src="/theatre/templates/hot_theatre/js/respond.min.js"></script>
-<![endif]-->
+
 <link rel="stylesheet" href="templates/hot_theatre/styles/style3.css"
 	type="text/css" />
 <script type="text/javascript">
@@ -221,7 +218,6 @@
 	<div id="blocker"></div>
 	<div class="sparky_wrapper">
 		<div class="sparky_full logorow">
-			<jsp:include page="menu.jsp"></jsp:include>
 			<div class="clr"></div>
 		</div>
 		<div class="sparky_full full carouselrow">
