@@ -270,7 +270,7 @@ hr {
 	<div class="container">
 		<div class="row">
 			<h2>
-				<strong>Thêm thành viên</strong> <a href="QuanLyTV.jsp"
+				<strong>Sửa thành viên</strong> <a href="QuanLyTV.jsp"
 					style="float: right"><button class="btn btn-info">
 						<i class="fa fa-undo" aria-hidden="true"></i> Trở về
 					</button></a>
@@ -287,7 +287,7 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="MaTV"
+								<input type="text" class=" form-control " value="<%=tv.getiDTV() %>" name="MaTV"
 									placeholder="Mã thành viên" id="idTV">
 							</div>
 							<div class="col-sm-2">
@@ -305,7 +305,7 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="tenTV"
+								<input type="text" class=" form-control " value="<%=tv.getTenTV() %>" name="tenTV"
 									placeholder="Tên thành viên" id="name">
 							</div>
 							<div class="col-sm-2">
@@ -323,7 +323,7 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="text" class=" form-control " value=""
+								<input type="text" class=" form-control " value="<%=tv.getGioiTinh() %>"
 									name="gioiTinh" placeholder="Giới tính" id="gioiTinh">
 							</div>
 							<div class="col-sm-2">
@@ -341,7 +341,7 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="date" class="form-control" name="date"
+								<input type="text" class="form-control" name="date" value="<%=tv.getNgaySinh() %>"
 									placeholder="Nhập ngày sinh" id="datepicker">
 
 							</div>
@@ -361,7 +361,7 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="password" class="form-control " value=""
+								<input type="password" class="form-control " value="<%=tv.getMatKhau() %>"
 									name="pass" placeholder="Nhập mật khẩu" id="pass">
 							</div>
 							<div class="col-sm-2">

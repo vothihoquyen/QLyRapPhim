@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Thêm Thành Viên</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -67,7 +67,7 @@ hr {
 		$("#datepicker").datepicker();
 	});
 </script>
-
+<title>Thêm Thành Viên</title>
 </head>
 <script>
 	$(document).ready(function() {
@@ -152,7 +152,7 @@ hr {
 														return false;
 													}
 
-													if ($('#date').val() == '') {
+													if ($('#datepicker').val() == '') {
 														$('#error-date')
 														.html(
 																'Bạn không được bỏ trống trường này!');
@@ -211,7 +211,7 @@ hr {
 																.html(' ');
 													}
 
-													if ($('#date').val().length > 0) {
+													if ($('#datepicker').val().length > 0) {
 														$('#date')
 																.css(
 																		'box-shadow',
@@ -314,8 +314,8 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="date" class="form-control" id="date"
-									placeholder="Enter date">
+								<input type="text" class="form-control" id="datepicker" name="date"
+									placeholder="Ngày sinh">
 							</div>
 							<div class="col-sm-2">
 								<p id="error_date"></p>

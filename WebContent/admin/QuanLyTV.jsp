@@ -94,7 +94,7 @@
                         <td><%= rs.getNString("TENTV")%></td>
                         <td><%= rs.getNString("GIOITINH")%></td>
                         <td><%=rs.getString("NGAYSINH") %></td>
-                        <td><%=rs.getString("MATKHAU") %>
+                        <td><%=rs.getString("MATKHAU") %></td>
                         <td>
                         <%
 					 String view = request.getContextPath()+"/VeiwThanhVien?maTV="+rs.getString("IDTV");

@@ -23,7 +23,7 @@
 							<nav class="container_topmenu">
 								<ul class="menu navv mnu_topmenu">
 									<li class="item-195"><a href="index.html">Lịch chiếu</a></li>
-									<li class="item-447"><a href="film/Phim.jsp">Phim</a></li>
+									<li class="item-447"><a href="<%=request.getContextPath()%>/film/Phim.jsp">Phim</a></li>
 									<li class="item-344 deeper parent"><a href="#">Giới thiệu</a>
 									<ul>
 											<li class="item-346"><a

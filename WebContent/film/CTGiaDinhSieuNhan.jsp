@@ -118,7 +118,7 @@
 				</ul>
 
 				<div class="tab-content nav-tabs-content">
-					<div role="tabpanel" class="tab-pane active" id="tomtacnoidung">
+					<div role="tabpanel" class="tab-pane active" id="tomtacnoidung" >
 						<div style="text-align: center;">
 							<iframe allow="autoplay; encrypted-media" allowfullscreen=""
 								frameborder="0" height="315"
@@ -151,24 +151,25 @@
 							<span
 								style="font-family: &amp; quot; times new roman&amp;quot; , times , serif; font-size: 16px; text-align: justify;"><img
 								alt="INCREDIBLES-2_POSTER-(4).jpg"
-								src="/getattachment/d9a2ea71-f9c3-4465-bd57-689de1f59e47/INCREDIBLES-2_POSTER-(4).jpg.aspx"
+								src="../images/pstergd.jpg"
 								style="width: 1000px; height: 1429px;"
 								title="INCREDIBLES-2_POSTER-(4).jpg" /><br /> <br /> <img
 								alt="INCREDIBLES-2_H1-(1).jpg"
-								src="/getattachment/799d034a-0f76-4c5d-a252-14b38da4c8ee/INCREDIBLES-2_H1-(1).jpg.aspx"
+								src="../images/INCREDIBLES-2_H1-(1).jpg"
 								style="width: 1371px; height: 744px;"
 								title="INCREDIBLES-2_H1-(1).jpg" /><br /> <br /> <img
 								alt="INCREDIBLES-2_H2-(1).jpg"
-								src="/getattachment/4da357cc-5f7f-46e1-bfe7-965e0738dbc0/INCREDIBLES-2_H2-(1).jpg.aspx"
+								src="../images/INCREDIBLES-2_H2-(1).jpg"
 								style="width: 1487px; height: 807px;"
 								title="INCREDIBLES-2_H2-(1).jpg" /><br /> <br /> <img
 								alt="INCREDIBLES-2_H3-(1).jpg"
-								src="/getattachment/6ca38c08-c629-476f-9371-f3e631a48d8c/INCREDIBLES-2_H3-(1).jpg.aspx"
+								src="../images/INCREDIBLES-2_H3-(1).jpg"
 								style="width: 1371px; height: 744px;"
 								title="INCREDIBLES-2_H3-(1).jpg" /></span><br /> &nbsp;
 						</div>
 
 					</div>
+
 					</div>
 					</div>
 					</div>
