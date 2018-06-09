@@ -31,9 +31,9 @@ public class XoaThanhVien extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		String IDTV = request.getParameter("ma");
+		String maTV = request.getParameter("maTV");
 		
-       ThanhVienDAO.delete(IDTV);
+       ThanhVienDAO.delete(maTV);
 		
 		response.sendRedirect(request.getHeader("referer"));
 	}

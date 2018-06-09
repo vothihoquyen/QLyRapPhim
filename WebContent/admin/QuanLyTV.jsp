@@ -8,12 +8,52 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
  <link href="css/bootstrap.min.css" rel="stylesheet">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  		
+  		<link href="css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+ <!-- Font Awesome -->
+<link href="<%=request.getContextPath()%>/vendors/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+
+<!-- Datatables -->
+<link href="<%=request.getContextPath()%>/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+	rel="stylesheet">
 <title>Quản lý thành viên</title>
 	</head>
 	<body>
 	
-	<div class="container">
-		<div class="row">
+	<div class="container ">
+		<div class="row center">
 			<h2>
 				<strong>Quản lí thành viên</strong>
 			</h2>
@@ -30,14 +70,10 @@
 		 <table id="example" class="table table-striped table-bordered"  style="width:100%">
                 <thead>
                     <tr>
-                    	<th>STT</th>
                         <th>Mã thành viên</th>
                         <th>Tên thành viên</th>
                         <th>Giới tính</th>
-                        <th>Tuổi</th>
                         <th>Ngày sinh</th>
-                        <th>Loại</th>
-                        <th>Tên đăng nhập</th>
                         <th>Mật khẩu</th>
                         <th>Xóa</th>
 						<th>Sửa</th>
@@ -54,19 +90,15 @@
 
                     %>
                     <tr>
-                     	<td><%= rs.getString("STT")%></td>
                         <td><%= rs.getString("IDTV")%></td>
                         <td><%= rs.getNString("TENTV")%></td>
-                        <td><%= rs.getString("GIOITINH")%></td>
-                        <td><%= rs.getString("TUOI")%></td>
+                        <td><%= rs.getNString("GIOITINH")%></td>
                         <td><%=rs.getString("NGAYSINH") %></td>
-                        <td><%= rs.getString("LOAI")%></td>
-                        <td><%= rs.getString("TENDANGNHAP")%></td>
-                        <td><%=rs.getNString("MATKHAU") %>
+                        <td><%=rs.getString("MATKHAU") %>
                         <td>
                         <%
-					 String view = "VeiwThanhVien?ma="+rs.getString("IDTV");
-					String del = "XoaThanhVien?ma="+rs.getString("IDTV");
+					 String view = request.getContextPath()+"/VeiwThanhVien?maTV="+rs.getString("IDTV");
+					String del = request.getContextPath()+"/XoaThanhVien?maTV="+rs.getString("IDTV");
 					
 					%>
 								<a href="<%=response.encodeURL(del)%>"><button type="submit" class="btn btn-sm btn-danger" id=""
@@ -88,7 +120,7 @@
             </table>
             
         </div>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -99,14 +131,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.jss"></script>
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
-        <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+         <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script> 
 
         <script>
 
                 $(document).ready(function () {
                     var table = $('#example').DataTable({
                         lengthChange: false,
-                        buttons: ['copy', 'excel', 'pdf', 'print']
+                        buttons: ['copy', 'excel', 'pdf','print']
                     });
 
                     table.buttons().container()

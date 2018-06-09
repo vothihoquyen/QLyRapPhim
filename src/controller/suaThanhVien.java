@@ -48,9 +48,6 @@ public class suaThanhVien extends HttpServlet {
 		
 		String matvCu = (String) session.getAttribute("thanhvien_id");
 		
-		int STT = Integer.parseInt(request.getParameter("STT"));
-		session.setAttribute("STT", STT);
-		
 		String MaTV = request.getParameter("MaTV");
 		session.setAttribute("MaTV", MaTV);
 		
@@ -61,30 +58,21 @@ public class suaThanhVien extends HttpServlet {
 		String gioiTinh = request.getParameter("gioiTinh");
 		session.setAttribute("gioiTinh", gioiTinh);
 		
-		int tuoi = Integer.parseInt(request.getParameter("tuoi"));
-		session.setAttribute("tuoi", tuoi);
-		
 		String date = request.getParameter("date");
 		session.setAttribute("date", date);
 
-		String loai = request.getParameter("loai");
-		session.setAttribute("loai", loai);
-		
-		String tkkh = request.getParameter("tkkh");
-		session.setAttribute("tkkh", tkkh);
-		
 		String pass = request.getParameter("pass");
 		session.setAttribute("pass", pass);
 		
 		String link;
 		if (error) {
-			link = request.getContextPath() + "/ThemTV.jsp";
+			link = request.getContextPath() + "/admin/ThemTV.jsp";
 			response.sendRedirect(link);
 		} else {
 			
-			ThanhVien tv = new ThanhVien(STT, MaTV, tenTV, gioiTinh, tuoi, date, loai, tkkh, pass);
+			ThanhVien tv = new ThanhVien( MaTV, tenTV, gioiTinh, date, pass);
 			ThanhVienDAO.edit(tv, matvCu);
-			link = request.getContextPath() + "/QuanLyTV.jsp";
+			link = request.getContextPath() + "/admin/QuanLyTV.jsp";
 			response.sendRedirect(link);
 		}
 	}		

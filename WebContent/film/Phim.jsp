@@ -3,6 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="dao.DBConnect"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Phim</title>
 <link rel="stylesheet" type="text/css"
@@ -41,6 +45,11 @@
 
 </head>
 <body>
+<!--  <header> <jsp:include page="/menu.jsp"></jsp:include> </header> -->
+<script>
+		$(".phimdc").addClass('active');
+	</script>
+	
 	<section>
 	<div class="container">
 		<div class="row">
@@ -48,11 +57,9 @@
 				<ul
 					class="list-inline list-unstyled lot-tab lot-tab-non-boder lot-tab-long text-uppercase text-center"
 					role="tablist">
-					<li role="presentation" class="active"><a href="#nowPlaying"
-						aria-controls="nowPlaying" role="tab" data-toggle="tab"
+					<li class="phimdc"><a href="Phim.jsp"
 						class="btn"> Phim đang chiếu </a></li>
-					<li role="presentation"><a href="PhimSapChieu.jsp"
-					 role="tab" data-toggle="tab"
+					<li class="phimsc"><a href="PhimSapChieu.jsp"
 						class="btn"> Phim sắp chiếu </a></li>
 				</ul>
 			</div>
@@ -62,53 +69,47 @@
 
 	<section>
 	<div class="container">
-		<div class="row">
-			<div class="tab-content nav-tabs-content movie-bt-30 col-pad-8">
+		<div class="row" id="box">
+		<div class="tab-content nav-tabs-content movie-bt-30 col-pad-8" id="box">
+		  <%
+
+                        Connection con = DBConnect.getConnection();
+                        String sql = "Select * from PHIM where THOILUONG != ''";
+                        Statement st = con.createStatement();
+                        ResultSet rs = st.executeQuery(sql);
+                        while (rs.next()) {
+
+                    %>
+			
 				<div role="tabpanel" class="tab-pane active" id="nowPlaying">
 					<div class="col-xs-3">
 						<div class="movie-box">
 							<div class="movie-img img-background"
-								style="background-image: url('../images/emgaimua.jpg')"></div>
+								style="width: 275px; height: 390px; margin-bottom: 10px;background-image: url('<%=rs.getNString("HINH")%> ')" ></div>
 							<div class="movie-overlay">
 								<div class="over">
 									<a class="btn btn-border-yellow" style="display:"
 										onclick="OpenCustomBootstrapModal('/CMSTemplates/MBMTemplate/FancyBooking.aspx?movieCode=3230&poster=/getattachment/98fbb7ce-1753-497d-a9aa-e6f50a2f955f/NodeAlias.aspx?width=275&height=344')">
 										Đặt vé </a> <a class="btn btn-border-yellow"
-										href="/Phim/SELFIE-CUNG-THAN-CHET.aspx"> Chi tiết </a>
+										href="<%=rs.getNString("CHITIET")%>"> Chi tiết </a>
 								</div>
 							</div>
 							<div class="movie-footer">
 								<div class="movie-name">
-									<a title="(P01) SELFIE CÙNG THẦN CHẾT "
-										href="/Phim/SELFIE-CUNG-THAN-CHET.aspx"> (P01) EM GÁi MƯA </a>
+									<a title="<%= rs.getString("TENPHIM")%>" style="width: 275px"
+										href="<%=rs.getNString("CHITIET")%>"><%=rs.getString("TENPHIM")%></a>
 								</div>
 							</div>
 						</div>
 
 					</div>
-
-					<div class="col-xs-3">
-						<div class="movie-box">
-							<div class="movie-img img-background"
-								style="background-image: url('../images/dao-cua-nhung-chu-cho.jpg')">
-							</div>
-							<div class="movie-overlay">
-								<div class="over">
-									<a class="btn btn-border-yellow" style="display:"
-										onclick="OpenCustomBootstrapModal('/CMSTemplates/MBMTemplate/FancyBooking.aspx?movieCode=3227&poster=/getattachment/d51c992f-8aef-402d-b55c-5beb568abcef/NodeAlias.aspx?width=275&height=344')">
-										Đặt vé </a> <a class="btn btn-border-yellow"
-										href="/Phim/ĐAO-CUA-NHUNG-CHU-CHO.aspx"> Chi tiết </a>
-								</div>
-							</div>
-							<div class="movie-footer">
-								<div class="movie-name">
-									<a title="(P08) ĐẢO CỦA NHỮNG CHÚ CHÓ"
-										href="/Phim/ĐAO-CUA-NHUNG-CHU-CHO.aspx"> (P08) ĐẢO CỦA
-										NHỮNG CHÚ ... </a>
-								</div>
-							</div>
-						</div>
-
 					</div>
+					 <%
+                        }
+                    %>
+                    </div>
+					</div>
+					</div>
+					</section>
 </body>
 </html>

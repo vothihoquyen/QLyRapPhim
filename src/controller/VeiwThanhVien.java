@@ -30,10 +30,10 @@ public class VeiwThanhVien extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session = request.getSession();
-		String maTV = request.getParameter("ma");
+		String maTV = request.getParameter("maTV");
 		session.setAttribute("thanhvien_id", maTV);
 
-		String link = request.getContextPath() + "/SuaTV.jsp";
+		String link = request.getContextPath() + "/admin/SuaTV.jsp";
 		response.sendRedirect(link);
 	}
 

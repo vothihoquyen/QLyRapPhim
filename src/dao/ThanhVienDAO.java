@@ -22,16 +22,12 @@ public class ThanhVienDAO {
 		int i;
 		try {
 			Connection connection = DBConnect.getConnection();
-			PreparedStatement statement = connection.prepareStatement("insert into THANHVIEN values(?,?,?,?,?,?,?,?,?)");
-	        statement.setInt(1, tv.getSTT());
-	        statement.setString(2, tv.getiDTV());
-	        statement.setNString(3, tv.getTenTV());
-	        statement.setString(4, tv.getGioiTinh());
-	        statement.setInt(5, tv.getTuoi());
-	        statement.setString(6, tv.getNgaySinh());
-	        statement.setNString(7, tv.getLoai());
-	        statement.setNString(8, tv.getTenDangNhap());
-	        statement.setString(9, tv.getMatKhau());
+			PreparedStatement statement = connection.prepareStatement("insert into THANHVIEN values(?,?,?,?,?)");
+	        statement.setString(1, tv.getiDTV());
+	        statement.setNString(2, tv.getTenTV());
+	        statement.setNString(3, tv.getGioiTinh());
+	        statement.setString(4, tv.getNgaySinh());
+	        statement.setString(5, tv.getMatKhau());
 	        
 	        i= statement.executeUpdate();
 	        statement.close();
@@ -50,15 +46,11 @@ public class ThanhVienDAO {
 			ResultSet rs = new DBConnect().chonDuLieuTuDTB("select * from THANHVIEN");
 			
 		while(rs.next()){
-			int STT = rs.getInt(1);
-			String IDTV = rs.getString(2);
-			String TENTV = rs.getNString(3);
-			String GIOITINH = rs.getString(4);
-			int TUOI = rs.getInt(5);
-			String NGAYSINH = rs.getString(6);
-			String LOAI = rs.getNString(7);
-			String TENDANGNHAP = rs.getNString(8);
-			String MATKHAU = rs.getString(9);
+			String IDTV = rs.getString(1);
+			String TENTV = rs.getNString(2);
+			String GIOITINH = rs.getNString(3);
+			String NGAYSINH = rs.getString(4);
+			String MATKHAU = rs.getString(5);
 			
 		}
 		return listCustomer;
@@ -92,7 +84,7 @@ public class ThanhVienDAO {
 			Connection conn = DBConnect.getConnection();
 			String sql = "delete from THANHVIEN where IDTV = ?";
 			PreparedStatement pr = conn.prepareStatement(sql);
-			pr.setString(2, IDTV);
+			pr.setString(1, IDTV);
 			i = pr.executeUpdate();
 			conn.close();
 		} catch (Exception e) {
@@ -129,11 +121,11 @@ public static ThanhVien getTV(String IDTV) {
 		Connection connection = DBConnect.getConnection();
 		String sql = "select * from THANHVIEN where IDTV = ? ;";
 		PreparedStatement pr = connection.prepareStatement(sql);
-		pr.setString(2, IDTV);
+		pr.setString(1, IDTV);
 		ResultSet rs =pr.executeQuery();
 		ThanhVien tv = null;
 		while(rs.next()) {
-			tv = new ThanhVien(rs.getInt("STT"),rs.getString("IDTV"), rs.getNString("TENTV"),rs.getString("GIOITINH"), rs.getInt("TUOI"),rs.getString("NGAYSINH"),rs.getNString("LOAI"), rs.getString("TENDANGNHAP"), rs.getString("MATKHAU"));
+			tv = new ThanhVien(rs.getString("IDTV"), rs.getNString("TENTV"),rs.getNString("GIOITINH"),rs.getString("NGAYSINH"), rs.getString("MATKHAU"));
 			
 		}
 		connection.close();
