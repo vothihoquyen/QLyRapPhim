@@ -58,7 +58,18 @@ public class DBConnect {
 		ResultSet rs = stmt.executeQuery(sql);
 		return rs;
 	}
+	public void excuteSql(String sql) throws Exception {
+		Connection connect = getConnection();
+		Statement stmt = connect.createStatement();
+		stmt.executeUpdate(sql);
+	}
 
+	public ResultSet selectData(String sql) throws Exception {
+		Connection connect = getConnection();
+		Statement stmt = connect.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		return rs;
+	}
 	public static void main(String[] args) {
 		Connection connection = DBConnect.getConnection();
 		if (connection != null) {

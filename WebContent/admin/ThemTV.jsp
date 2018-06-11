@@ -83,7 +83,6 @@ hr {
 </script>
 <body>
 	<!-- validation form -->
-	<script src="../js/jquery-1.8.2.min.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 		$(document)
@@ -261,7 +260,15 @@ hr {
 					<div class="col-sm-10">
 						<div class="row">
 							<div class="col-sm-8">
-								<input type="text" class=" form-control " value="" name="MaTV"
+								<%
+					String MaTV = request.getParameter("MaTV");
+				%>
+				<%
+					if (MaTV == null)
+						MaTV = "";
+				%>
+							
+								<input type="text" class=" form-control " value="<%=MaTV %>" name="MaTV"
 									placeholder="Mã thành viên" id="idTV">
 							</div>
 							<div class="col-sm-2">
@@ -269,7 +276,12 @@ hr {
 							</div>
 						</div>
 						<div class="row">
-							<p style="color: red" id="error-id"></p>
+							<p style="color: red"></p>
+							<%
+							if (request.getAttribute("MaTV_err") != null) {
+								out.println((String) request.getAttribute("MaTV_err"));
+							}
+						%>
 						</div>
 					</div>
 				</div>
@@ -287,7 +299,12 @@ hr {
 							</div>
 						</div>
 						<div class="row">
-							<p style="color: red" id="error-name"></p>
+							<p style="color: red"></p>
+							<%
+							if (request.getAttribute("tenTV_err") != null) {
+								out.println((String) request.getAttribute("tenTV_err"));
+							}
+						%>
 						</div>
 					</div>
 				</div>
@@ -305,7 +322,12 @@ hr {
 							</div>
 						</div>
 						<div class="row">
-							<p style="color: red" id="error-gioiTinh"></p>
+							<p style="color: red" ></p>
+								<%
+							if (request.getAttribute("gioiTinh_err") != null) {
+								out.println((String) request.getAttribute("gioiTinh_err"));
+							}
+						%>
 						</div>
 					</div>
 				</div>
@@ -323,7 +345,12 @@ hr {
 						</div>
 					</div>
 					<div class="row">
-						<p style="color: red" id="error-date"></p>
+						<p style="color: red" ></p>
+							<%
+							if (request.getAttribute("date_err") != null) {
+								out.println((String) request.getAttribute("date_err"));
+							}
+						%>
 					</div>
 				</div>
 				<div class="form-group">
@@ -340,7 +367,12 @@ hr {
 							</div>
 						</div>
 						<div class="row">
-							<p style="color: red" id="error-pass"></p>
+							<p style="color: red"></p>
+							<%
+							if (request.getAttribute("pass_err") != null) {
+								out.println((String) request.getAttribute("pass_err"));
+							}
+						%>
 						</div>
 					</div>
 				</div>

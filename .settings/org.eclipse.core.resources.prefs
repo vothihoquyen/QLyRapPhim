@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
-encoding//WebContent/film/CTGiaDinhSieuNhan.jsp=UTF-8
+encoding//WebContent/film/CTPhim.jsp=UTF-8
 encoding//WebContent/film/Phim.jsp=UTF-8
+encoding//src/controller/addThanhVien.java=UTF-8
 encoding//src/dao/DBConnect.java=UTF-8
+encoding//src/dao/PhimDAO.java=UTF-8
 encoding//src/dao/ThanhVienDAO.java=UTF-8

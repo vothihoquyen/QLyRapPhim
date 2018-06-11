@@ -4,7 +4,7 @@
     Author     : Darkmoon
 --%>
 
-<%@page import="DAO.LichChieuDAO"%>
+<%@page import="dao.LichChieuDAO"%>
 <%@page import="java.util.Map"%>
 <%@page import="model.LichChieu"%>
 <%@page import="java.sql.Date"%>
@@ -97,20 +97,20 @@
 					for (LichChieu ds : dsLichChieu.values()) {
 				%>
 				<tr>
-					<td><%=ds.getIDsuatchieu()%></td>
-					<td><%=ds.getNgaychieu()%></td>
+					<td><%=ds.getiDSuatChieu()%></td>
+					<td><%=ds.getNgayChieu()%></td>
 					<td><%=ds.getGio()%></td>
-					<td><%=ds.getIDphim()%></td>
+					<td><%=ds.getiDPhim()%></td>
 					<td><a
-						href="<%=request.getContextPath()%>/XuLyXemNhanVien?msnv=<%=ds.getIDsuatchieu()%>">
+						href="<%=request.getContextPath()%>/XuLyXemNhanVien?msnv=<%=ds.getiDSuatChieu()%>">
 							<i class="fas fa-info-circle fa-2x fa-fw" data-toggle="tooltip"
 							title="Thông tin chi tiết" style="color: darkturquoise;"></i>
 					</a> <a
-						href="edit.jsp?id=<%=ds.getIDsuatchieu()%>&chucNang=Edit">
+						href="edit.jsp?id=<%=ds.getiDSuatChieu()%>&chucNang=Edit">
 							<i class="far fa-edit fa-2x fa-fw" data-toggle="tooltip"
 							title="Sửa thông tin" style="color: #8600b3;"></i>
 					</a> <a
-						href="LichChieu?chucNang=Delete&id=<%=ds.getIDsuatchieu()%>">
+						href="LichChieu?chucNang=Delete&id=<%=ds.getiDSuatChieu()%>">
 							<i class="far fa-trash-alt fa-2x fa-fw" data-toggle="tooltip"
 							title="Xóa nhân viên" style="color: red;"></i>
 					</a></td>

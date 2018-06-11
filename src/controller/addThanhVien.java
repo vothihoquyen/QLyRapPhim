@@ -66,6 +66,38 @@ public class addThanhVien extends HttpServlet {
 		session.setAttribute("pass", pass);
 		
 		String link;
+		
+		String MaTV_err = "";
+		if (MaTV == null || MaTV.equals("")) {
+			MaTV_err = "Trường mã Thành viên không được để trống!";
+			error = true;
+			request.setAttribute("MaTV_err", MaTV_err);
+		}
+		String tenTV_err = "";
+		if (tenTV == null || tenTV.equals("")) {
+			tenTV_err = "Trường này không được để trống!";
+			error = true;
+			request.setAttribute("tenTV_err", tenTV_err);
+		}
+		
+		String gioiTinh_err = "";
+		if (gioiTinh == null || gioiTinh.equals("")) {
+			gioiTinh_err = "Trường này không được để trống!";
+			error = true;
+			request.setAttribute("gioiTinh_err", gioiTinh_err);
+		}
+		String date_err = "";
+		if (date == null || date.equals("")) {
+			date_err = "Trường này không được để trống!";
+			error = true;
+			request.setAttribute("date_err", date_err);
+		}
+		String pass_err = "";
+		if (pass == null || pass.equals("")) {
+			pass_err = "Trường này không được để trống!";
+			error = true;
+			request.setAttribute("pass_err", pass_err);
+		}	
 		if (error) {
 			link = request.getContextPath() + "/admin/ThemTV.jsp";
 			response.sendRedirect(link);

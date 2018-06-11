@@ -9,19 +9,6 @@
 <%@page import="java.sql.Connection"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Phim</title>
-<link rel="stylesheet" type="text/css"
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/style.css" />
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/jquery.mCustomScrollbar.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/calendar.css"
-	rel="stylesheet" type="text/css" />
-
-<!-- new css -->
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/font-awesome/css/font-awesome.css"
-	rel="stylesheet" type="text/css" />
 <link
 	href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link
@@ -56,7 +43,7 @@
 					<div class="movie-box-banner">
 						<div class="movie-box">
 							<a title="(3D)THẾ GIỚI KHỦNG LONG: VƯƠNG QUỐC SỤP ĐỔ"
-								href="/Phim/THE-GIOI-KHUNG-LONG-VUONG-QUOC-SUP-ĐO-(1).aspx">
+								href="#">
 								<div class="movie-img img-background"
 									style="background-image: url('../images/khunglong.jpg')">
 								</div>
@@ -64,7 +51,7 @@
 							<div class="movie-footer">
 								<div class="movie-name">
 									<a title="(3D) THẾ GIỚI KHỦNG LONG: VƯƠNG QUỐC SỤP ĐỔ"
-										href="/Phim/THE-GIOI-KHUNG-LONG-VUONG-QUOC-SUP-ĐO-(1).aspx">
+										href="#">
 										(3D)THẾ GIỚI KHỦNG ... </a>
 									<p class="color-gray">
 										Từ <strong>08/06/2018 </strong> đến <strong>22/06/2018</strong>
@@ -91,7 +78,7 @@
 					<div class="movie-box-banner">
 						<div class="movie-box">
 							<a title="(C18) NGÔI NHÀ QUỶ ÁM "
-								href="/Phim/NGOI-NHA-QUY-AM.aspx">
+								href="#">
 								<div class="movie-img img-background"
 									style="background-image: url('../images/ngoinha.jpg')">
 								</div>
@@ -99,7 +86,7 @@
 							<div class="movie-footer">
 								<div class="movie-name">
 									<a title="NGÔI NHÀ QUỶ ÁM "
-										href="/Phim/NGOI-NHA-QUY-AM.aspx">NGÔI NHÀ QUỶ ÁM </a>
+										href="#">NGÔI NHÀ QUỶ ÁM </a>
 									<p class="color-gray">
 										Từ <strong>08/06/2018 </strong> đến <strong>22/06/2018</strong>
 									</p>
@@ -125,14 +112,14 @@
 				<div class="col-xs-3">
 					<div class="movie-box-banner">
 						<div class="movie-box">
-							<a title=" EM GÁI MƯA " href="/Phim/EM-GAI-MUA.aspx">
+							<a title=" EM GÁI MƯA " href="#">
 								<div class="movie-img img-background"
 									style="background-image: url('../images/emgaimua.jpg')">
 								</div>
 							</a>
 							<div class="movie-footer">
 								<div class="movie-name">
-									<a title=" EM GÁI MƯA " href="/Phim/EM-GAI-MUA.aspx">
+									<a title=" EM GÁI MƯA " href="#">
 										EM GÁI MƯA </a>
 									<p class="color-gray">
 										Từ <strong>30/05/2018 </strong> đến <strong>15/06/2018</strong>
@@ -230,14 +217,18 @@
 								<div class="over">
 									<a class="btn btn-border-yellow" style="display:"
 										onclick="OpenCustomBootstrapModal('/CMSTemplates/MBMTemplate/FancyBooking.aspx?movieCode=3230&poster=/getattachment/98fbb7ce-1753-497d-a9aa-e6f50a2f955f/NodeAlias.aspx?width=275&height=344')">
-										Đặt vé </a> <a class="btn btn-border-yellow"
-										href="<%=rs.getNString("CHITIET")%>"> Chi tiết </a>
+										Đặt vé </a>
+										 <%
+					 String view = request.getContextPath()+"/ViewPhim?maPhim="+rs.getString("IDPHIM");
+										 %>
+										 <a class="btn btn-border-yellow"
+										href="<%=response.encodeURL(view)%>"> Chi tiết </a>
 								</div>
 							</div>
 							<div class="movie-footer">
 								<div class="movie-name">
 									<a title="<%= rs.getString("TENPHIM")%>" style="width: 275px"
-										href="<%=rs.getNString("CHITIET")%>"><%=rs.getString("TENPHIM")%></a>
+										href="<%=response.encodeURL(view)%>"><%=rs.getString("TENPHIM")%></a>
 								</div>
 							</div>
 						</div>

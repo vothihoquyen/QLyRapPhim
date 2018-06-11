@@ -36,7 +36,7 @@
 											<li class="item-353"><a
 												href="index.php/extensions/hot-full-carousel.html">Quản lý phim</a></li>
 											<li class="item-426"><a
-												href="index.php/extensions/hot-responsive-lightbox.html">Quản lý thành viên</a></li>
+												href="<%=request.getContextPath()%>/admin/QuanLyTV.jsp">Quản lý thành viên</a></li>
 											<li class="item-354"><a
 												href="index.php/extensions/hot-slicebox.html">Quản lý lịch chiếu</a></li>
 											<li class="item-355"><a

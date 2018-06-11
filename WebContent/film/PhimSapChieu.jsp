@@ -9,27 +9,11 @@
 <%@page import="java.sql.Connection"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Phim</title>
-<link rel="stylesheet" type="text/css"
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/style.css" />
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/jquery.mCustomScrollbar.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/calendar.css"
-	rel="stylesheet" type="text/css" />
-
-<!-- new css -->
-<link
-	href="/CMSPages/GetResource.ashx?stylesheetfile=/App_Themes/lotte/Content/font-awesome/css/font-awesome.css"
-	rel="stylesheet" type="text/css" />
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
 <link href="../css/slick/slick.css" rel="stylesheet" type="text/css" />
 <link href="../css/slick/slick-theme.css" rel="stylesheet"
 	type="text/css" />
 <link href="../css/style.master.css" rel="stylesheet" type="text/css" />
-
-
-
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -82,14 +66,17 @@
 								style="width: 275px; height: 390px; margin-bottom: 10px;background-image: url('<%=rs.getNString("HINH")%> ')"></div>
 							<div class="movie-overlay">
 								<div class="over">
+								 <%
+					 String view = request.getContextPath()+"/ViewPhim?maPhim="+rs.getString("IDPHIM");
+										 %>
 									<a class="btn btn-border-yellow"
-										href="<%=rs.getNString("CHITIET")%>"> Chi tiết </a>
+										href="<%=response.encodeURL(view)%>"> Chi tiết </a>
 								</div>
 							</div>
 							<div class="movie-footer">
 								<div class="movie-name">
 									<a title="<%=rs.getNString("TENPHIM")%>" style="width: 275px"
-										href="<%=rs.getNString("CHITIET")%>"><%=rs.getNString("TENPHIM")%></a>
+										href="<%=response.encodeURL(view)%>"><%=rs.getNString("TENPHIM")%></a>
 								</div>
 							</div>
 						</div>

@@ -8,9 +8,11 @@ public class Phim {
 	private String dienVien;
 	private String iDLPhim;
 	private String iDDD;
+	private String noiDung;
 	private String thoiLuong;
+	private String chiTiet;
 	public Phim(String iDPhim, String tenPhim, String hinh, String ngayKhoiChieu, String dienVien, String iDLPhim,
-			String iDDD, String thoiLuong) {
+			String iDDD, String noiDung, String thoiLuong, String chiTiet) {
 		super();
 		this.iDPhim = iDPhim;
 		this.tenPhim = tenPhim;
@@ -19,7 +21,15 @@ public class Phim {
 		this.dienVien = dienVien;
 		this.iDLPhim = iDLPhim;
 		this.iDDD = iDDD;
+		this.noiDung = noiDung;
 		this.thoiLuong = thoiLuong;
+		this.chiTiet = chiTiet;
+	}
+	@Override
+	public String toString() {
+		return "Phim [iDPhim=" + iDPhim + ", tenPhim=" + tenPhim + ", hinh=" + hinh + ", ngayKhoiChieu=" + ngayKhoiChieu
+				+ ", dienVien=" + dienVien + ", iDLPhim=" + iDLPhim + ", iDDD=" + iDDD + ", noiDung=" + noiDung
+				+ ", thoiLuong=" + thoiLuong + ", chiTiet=" + chiTiet + "]";
 	}
 	public String getiDPhim() {
 		return iDPhim;
@@ -63,18 +73,24 @@ public class Phim {
 	public void setiDDD(String iDDD) {
 		this.iDDD = iDDD;
 	}
+	public String getNoiDung() {
+		return noiDung;
+	}
+	public void setNoiDung(String noiDung) {
+		this.noiDung = noiDung;
+	}
 	public String getThoiLuong() {
 		return thoiLuong;
 	}
 	public void setThoiLuong(String thoiLuong) {
 		this.thoiLuong = thoiLuong;
 	}
-	@Override
-	public String toString() {
-		return "Phim [iDPhim=" + iDPhim + ", tenPhim=" + tenPhim + ", hinh=" + hinh + ", ngayKhoiChieu=" + ngayKhoiChieu
-				+ ", dienVien=" + dienVien + ", iDLPhim=" + iDLPhim + ", iDDD=" + iDDD + ", thoiLuong=" + thoiLuong
-				+ "]";
+	public String getChiTiet() {
+		return chiTiet;
 	}
-
+	public void setChiTiet(String chiTiet) {
+		this.chiTiet = chiTiet;
+	}
+	
 	
 }
