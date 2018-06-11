@@ -97,20 +97,20 @@
 					for (LichChieu ds : dsLichChieu.values()) {
 				%>
 				<tr>
-					<td><%=ds.getiDSuatChieu()%></td>
+					<td><%=ds.getIDSuatChieu()%></td>
 					<td><%=ds.getNgayChieu()%></td>
 					<td><%=ds.getGio()%></td>
-					<td><%=ds.getiDPhim()%></td>
+					<td><%=ds.getIDPhim()%></td>
 					<td><a
-						href="<%=request.getContextPath()%>/XuLyXemNhanVien?msnv=<%=ds.getiDSuatChieu()%>">
+						href="<%=request.getContextPath()%>/XuLyXemNhanVien?msnv=<%=ds.getIDSuatChieu()%>">
 							<i class="fas fa-info-circle fa-2x fa-fw" data-toggle="tooltip"
 							title="Thông tin chi tiết" style="color: darkturquoise;"></i>
 					</a> <a
-						href="edit.jsp?id=<%=ds.getiDSuatChieu()%>&chucNang=Edit">
+						href="edit.jsp?id=<%=ds.getIDSuatChieu()%>&chucNang=Edit">
 							<i class="far fa-edit fa-2x fa-fw" data-toggle="tooltip"
 							title="Sửa thông tin" style="color: #8600b3;"></i>
 					</a> <a
-						href="LichChieu?chucNang=Delete&id=<%=ds.getiDSuatChieu()%>">
+						href="LichChieu?chucNang=Delete&id=<%=ds.getIDSuatChieu()%>">
 							<i class="far fa-trash-alt fa-2x fa-fw" data-toggle="tooltip"
 							title="Xóa nhân viên" style="color: red;"></i>
 					</a></td>

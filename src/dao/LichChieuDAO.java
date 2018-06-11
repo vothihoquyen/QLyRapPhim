@@ -18,8 +18,8 @@ public class LichChieuDAO {
 	public Map<String, LichChieu> getSelectPhim(String maphim) {
 		Map<String, LichChieu> phim = new HashMap<>();
 		for (LichChieu lichchieu : mapLichChieu.values()) {
-			if (lichchieu.getiDPhim().equals(phim)) {
-				phim.put(lichchieu.getiDSuatChieu(), lichchieu);
+			if (lichchieu.getIDPhim().equals(phim)) {
+				phim.put(lichchieu.getIDSuatChieu(), lichchieu);
 			}
 		}
 		return phim;
@@ -28,7 +28,7 @@ public class LichChieuDAO {
 	public static Set<String> getSetPhim() {
 		Set<String> IDPhim = new HashSet<>();
 		for (LichChieu lichchieu : mapLichChieu.values()) {
-			IDPhim.add(lichchieu.getiDPhim());
+			IDPhim.add(lichchieu.getIDPhim());
 		}
 		return IDPhim;
 	}
@@ -44,7 +44,7 @@ public class LichChieuDAO {
 				String IDphim = rs.getString(4);
 				
 				LichChieu lichchieu = new LichChieu(IDsuatchieu, ngaychieu, giochieu, IDphim);
-				mapTemp.put(lichchieu.getiDSuatChieu(), lichchieu);
+				mapTemp.put(lichchieu.getIDSuatChieu(), lichchieu);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,15 +61,15 @@ public class LichChieuDAO {
 
 	public boolean add(Object obj) {
 		LichChieu lichchieu = (LichChieu) obj;
-		mapLichChieu.put(lichchieu.getiDSuatChieu(), lichchieu);
+		mapLichChieu.put(lichchieu.getIDSuatChieu(), lichchieu);
 		String sql = "insert into dbo.LICHCHIEU values(?,?,?,?)";
 		Connection connect = DBConnect.getConnection();
 		try {
 			PreparedStatement ppstm = connect.prepareStatement(sql);
-			ppstm.setString(1, lichchieu.getiDSuatChieu());
+			ppstm.setString(1, lichchieu.getIDSuatChieu());
 			ppstm.setString(2, lichchieu.getNgayChieu());
 			ppstm.setString(3, lichchieu.getGio());
-			ppstm.setString(4, lichchieu.getiDPhim());
+			ppstm.setString(4, lichchieu.getIDPhim());
 			ppstm.executeUpdate();
 			return true;
 		} catch (SQLException e) {
@@ -81,16 +81,16 @@ public class LichChieuDAO {
 
 	public boolean edit(Object obj) {
 		LichChieu lichchieu = (LichChieu) obj;
-		mapLichChieu.replace(lichchieu.getiDSuatChieu(), lichchieu);
-		System.out.println(lichchieu.getiDSuatChieu());
+		mapLichChieu.replace(lichchieu.getIDSuatChieu(), lichchieu);
+		System.out.println(lichchieu.getIDSuatChieu());
 		String sql = "update dbo.LICHCHIEU set IDSUATCHIEU=?, NGAYCHIEU=?, GIO=?, IDPHIM=? where IDSUATCHIEU=?";
 		Connection connect = DBConnect.getConnection();
 		try {
 			PreparedStatement ppstm = connect.prepareStatement(sql);
-			ppstm.setString(1,lichchieu.getiDSuatChieu());
+			ppstm.setString(1,lichchieu.getIDSuatChieu());
 			ppstm.setString(2,lichchieu.getNgayChieu());
 			ppstm.setString(3,lichchieu.getGio());
-			ppstm.setString(4,lichchieu.getiDPhim());
+			ppstm.setString(4,lichchieu.getIDPhim());
 			ppstm.executeUpdate();
 			return true;
 		} catch (SQLException e) {

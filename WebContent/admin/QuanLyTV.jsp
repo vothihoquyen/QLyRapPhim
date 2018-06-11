@@ -7,52 +7,18 @@
 <%@page import="dao.DBConnect"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
- <link href="css/bootstrap.min.css" rel="stylesheet">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  		
-  		<link href="css/bootstrap.min.css" rel="stylesheet">
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	rel="stylesheet" type="text/css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
- <!-- Font Awesome -->
-<link href="<%=request.getContextPath()%>/vendors/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet">
-
-<!-- Datatables -->
-<link href="<%=request.getContextPath()%>/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="<%=request.getContextPath()%>/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
-	rel="stylesheet">
-<title>Quản lý thành viên</title>
-	</head>
-	<body>
-	
-	<div class="container ">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+           <div class="container ">
 		<div class="row center">
 			<h2>
 				<strong>Quản lí thành viên</strong>
@@ -120,6 +86,7 @@
             </table>
             
         </div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -131,31 +98,20 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.jss"></script>
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
-         <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script> 
-
+ 		
         <script>
 
-                $(document).ready(function () {
-                    var table = $('#example').DataTable({
-                        lengthChange: false,
-                        buttons: ['copy', 'excel', 'pdf','print']
-                    });
-
-                    table.buttons().container()
-                            .appendTo('#example_wrapper .col-sm-6:eq(0)');
-                    table.buttons().appendTo('example_bth .btn-danger');
+            $(document).ready(function () {
+                var table = $('#example').DataTable({
+                    lengthChange: false,
+                    buttons: ['copy', 'excel', 'pdf']
                 });
 
+                table.buttons().container()
+                        .appendTo('#example_wrapper .col-sm-6:eq(0)');
+                table.buttons().appendTo('example_bth .btn-danger');
+            });
+
         </script>
-        <script >
-        $(document).ready(function(){
-        	  $("#myInput").on("keyup", function() {
-        	    var value = $(this).val().toLowerCase();
-        	    $("#myTable tr").filter(function() {
-        	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        	    });
-        	  });
-        	});
-        	</script>
-	</body>
+    </body>
 </html>
