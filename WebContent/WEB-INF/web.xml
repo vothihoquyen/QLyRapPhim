@@ -3,14 +3,5 @@
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
-  <jsp-config>
-    <jsp-property-group>
-      <description>Chèn thêm header và footer vào mỗi trang jsp</description>
-      <display-name>HeaderFooter</display-name>
-      <url-pattern>*.jsp</url-pattern>
-      <page-encoding>UTF-8</page-encoding>
-      <include-prelude>/menu.jsp</include-prelude>
-      <include-coda>/footer.jsp</include-coda>
-    </jsp-property-group>
-  </jsp-config>
+  <jsp-config/>
 </web-app>
