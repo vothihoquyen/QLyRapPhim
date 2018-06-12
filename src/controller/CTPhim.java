@@ -84,7 +84,7 @@ public class CTPhim extends HttpServlet {
 		} else {
 			
 			Phim phim = new Phim(iDPhim, name, hinh, ngay, tenDV, tenLP, tenDD, tomtacnoidung, TL, chiTiet);
-			PhimDAO.getTV(phim.getiDPhim());
+			PhimDAO.getPhim(phim.getiDPhim());
 			link = request.getContextPath() + "/film/Phim.jsp";
 			link = request.getContextPath() + "/film/PhimSapChieu.jsp";
 			response.sendRedirect(link);

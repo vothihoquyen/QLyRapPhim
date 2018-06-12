@@ -8,8 +8,8 @@ public class Phim {
 	private String dienVien;
 	private String iDLPhim;
 	private String iDDD;
-	private String noiDung;
 	private String thoiLuong;
+	private String noiDung;
 	private String chiTiet;
 	public Phim(String iDPhim, String tenPhim, String hinh, String ngayKhoiChieu, String dienVien, String iDLPhim,
 			String iDDD, String noiDung, String thoiLuong, String chiTiet) {
