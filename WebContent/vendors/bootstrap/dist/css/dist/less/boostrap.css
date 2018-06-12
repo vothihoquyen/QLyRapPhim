@@ -3494,7 +3494,7 @@ tbody.collapse.in {
   border-left: 4px solid transparent;
 }
 .dropup,
-.dropdown {
+.menuDropdown {
   position: relative;
 }
 .dropdown-toggle:focus {
@@ -3602,14 +3602,14 @@ tbody.collapse.in {
   left: auto;
 }
 .dropup .caret,
-.navbar-fixed-bottom .dropdown .caret {
+.navbar-fixed-bottom .menuDropdown .caret {
   border-top: 0;
   border-bottom: 4px dashed;
   border-bottom: 4px solid \9;
   content: "";
 }
 .dropup .dropdown-menu,
-.navbar-fixed-bottom .dropdown .dropdown-menu {
+.navbar-fixed-bottom .menuDropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 2px;
@@ -4033,7 +4033,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   margin-bottom: 5px;
 }
-.nav-tabs.nav-justified > .dropdown .dropdown-menu {
+.nav-tabs.nav-justified > .menuDropdown .dropdown-menu {
   top: auto;
   left: auto;
 }
@@ -4098,7 +4098,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   margin-bottom: 5px;
 }
-.nav-justified > .dropdown .dropdown-menu {
+.nav-justified > .menuDropdown .dropdown-menu {
   top: auto;
   left: auto;
 }
@@ -5434,7 +5434,7 @@ button.list-group-item-danger.active:focus {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
-.panel-heading > .dropdown .dropdown-toggle {
+.panel-heading > .menuDropdown .dropdown-toggle {
   color: inherit;
 }
 .panel-title {
