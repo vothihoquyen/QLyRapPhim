@@ -1,28 +1,28 @@
 package model;
 
 public class DaoDien {
-	private String idDD;
+	private String iDDD;
 	private String tenDD;
 	private String queQuan;
 
-	public DaoDien(String idDD, String tenDD, String queQuan) {
+	public DaoDien(String iDDD, String tenDD, String queQuan) {
 		super();
-		this.idDD = idDD;
+		this.iDDD = iDDD;
 		this.tenDD = tenDD;
 		this.queQuan = queQuan;
 	}
 
 	@Override
 	public String toString() {
-		return "DaoDien [idDD=" + idDD + ", tenDD=" + tenDD + ", queQuan=" + queQuan + "]";
+		return "DaoDien [iDDD=" + iDDD + ", tenDD=" + tenDD + ", queQuan=" + queQuan + "]";
 	}
 
-	public String getIDDD() {
-		return idDD;
+	public String getiDDD() {
+		return iDDD;
 	}
 
-	public void setIDDD(String iDDD) {
-		this.idDD = iDDD;
+	public void setiDDD(String iDDD) {
+		this.iDDD = iDDD;
 	}
 
 	public String getTenDD() {

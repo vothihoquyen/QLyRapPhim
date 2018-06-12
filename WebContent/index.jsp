@@ -1,8 +1,18 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+
+<!-- Mirrored from demo.hotjoomlatemplates.com/theatre/index.php?style=3 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 May 2018 06:28:10 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="generator"
+	content="Joomla! - Open Source Content Management" />
+<title>Hot Theatre</title>
 <link href="modules/mod_hot_responsive_lightbox/tmpl/style.css"
 	rel="stylesheet" type="text/css" />
 <link href="modules/mod_hot_maps/tmpl/hot_maps.css" rel="stylesheet"
@@ -201,7 +211,8 @@
 	src="templates/hot_theatre/js/responsive-nav.min.js"></script>
 <script type="text/javascript"
 	src="templates/hot_theatre/js/modernizr-custom.js"></script>
-<link rel="stylesheet" href="css/indexCustom.css" type="text/css" />
+	<link rel="stylesheet" href="css/indexCustom.css"
+	type="text/css" />
 </head>
 <body class="sparky_home">
 	<div id="blocker"></div>
@@ -739,7 +750,8 @@
 									<li class="item-458"><a
 										href="index.php/extensions/hot-maps.html">Hot Maps</a></li>
 									<li class="item-459"><a
-										href="index.php/extensions/hot-slicebox.html">Hot Slicebox</a></li>
+										href="index.php/extensions/hot-slicebox.html">Hot
+											Slicebox</a></li>
 								</ul>
 							</nav>
 						</div>

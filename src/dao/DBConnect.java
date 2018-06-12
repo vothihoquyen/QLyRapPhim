@@ -12,7 +12,7 @@ public class DBConnect {
 		String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=QLYRAPPHIM";
 		String user = "sa";
-		String pass = "123456";
+		String pass = "nhi";
 		
 		try {
 			Class.forName(driver);

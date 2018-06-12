@@ -1,5 +1,4 @@
 /build/
-<<<<<<< HEAD
 src/dao/DBConnect.java
 WebContent/WEB-INF/web.xml
 WebContent/lichchieu/edit.jsp
@@ -7,10 +6,3 @@ WebContent/WEB-INF/web.xml
 WebContent/lichchieu/edit.jsp
 WebContent/lichchieu/edit.jsp
 WebContent/WEB-INF/web.xml
-=======
-/nbproject/private/
-/nbbuild/
-/dist/
->>>>>>> 9104e4728d648c707c5baf919649bd9497470e7f
-WebContent/WEB-INF/web.xml
-WebContent/footer.jsp

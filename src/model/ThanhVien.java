@@ -6,7 +6,6 @@ public class ThanhVien {
 	private String gioiTinh;
 	private String ngaySinh;
 	private String matKhau;
-        private String loaiTV;
 
 	public ThanhVien( String iDTV, String tenTV, String gioiTinh, String ngaySinh, String matKhau) {
 		this.iDTV = iDTV;
@@ -14,7 +13,6 @@ public class ThanhVien {
 		this.gioiTinh = gioiTinh;
 		this.ngaySinh = ngaySinh;
 		this.matKhau = matKhau;
-                this.loaiTV = "user";
 	}
 	
 
@@ -60,10 +58,7 @@ public class ThanhVien {
 		this.matKhau = matKhau;
 	}
 
-        public String getLoai(){
-            return this.loaiTV;
-        }
-        
+
 	@Override
 	public String toString() {
 		return "ThanhVien [iDTV=" + iDTV + ", tenTV=" + tenTV + ", gioiTinh=" + gioiTinh + ", ngaySinh=" + ngaySinh

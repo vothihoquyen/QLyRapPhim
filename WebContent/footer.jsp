@@ -1,16 +1,13 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
 <title>Footer</title>
 
 <link href="css/Footer.css"
 	rel="stylesheet" type="text/css" />
-=======
-<title>Rạp phim 2NBQ</title>
->>>>>>> 9104e4728d648c707c5baf919649bd9497470e7f
 </head>
 <body>
 	
