@@ -25,9 +25,9 @@
 <body>
 	<div class="container">
 		<h2>Sửa lịch chiếu</h2>
-		<form class="form-horizontal" action="LichChieu?chucNang=Edit&id=<%=lichchieu.getIDSuatChieu()%>" method="post">
+		<form class="form-horizontal" action="LichChieu?chucNang=Edit&id=<%=lichchieu.getiDSuatChieu()%>" method="post">
 			<div class="form-group">
-			<input type="hidden"id="IDsuatchieu" name="masuatchieu" value="<%=lichchieu.getIDSuatChieu() %>">
+			<input type="hidden"id="IDsuatchieu" name="masuatchieu" value="<%=lichchieu.getiDSuatChieu() %>">
 				<label class="control-label col-sm-2" for="ngaychieu">Ngày chiếu:</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="ngaychieu"
@@ -45,7 +45,7 @@
 				<label class="control-label col-sm-2" for="maphim">Mã phim:</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="IDphim"
-						placeholder="Enter ID Films" name="maphim" value="<%=lichchieu.getIDPhim()%>">
+						placeholder="Enter ID Films" name="maphim" value="<%=lichchieu.getiDPhim()%>">
 				</div>
 			</div>
 			
